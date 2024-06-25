@@ -2,32 +2,264 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  transition: color, background-color 500ms;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.myhover {
+  background: linear-gradient(to right, transparent, transparent),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.myhover:hover {
+  background-size: 0 2px, 100% 2px;
+}
+
+.myhover2 {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.myhover2::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(var(--foreground));
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+}
+
+.myhover2:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-hover {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-hover::after {
+  background: gray;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 1;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  width: 20px;
+  filter: blur(10px);
+  z-index: 10;
+}
+
+.btn-hover:hover::after {
+  animation: btnhover 1s infinite;
+}
+
+@keyframes btnhover {
+  0% {
+    left: -75px;
+  }
+  100% {
+    left: 120%;
   }
 }
+
+._border-loop {
+  overflow: hidden;
+  transition: background-color 500ms;
+}
+
+._border-loop::before {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--foreground));
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+  left: 0;
+  top: -48px;
+  animation: borderloop 5s infinite linear;
+}
+
+@keyframes borderloop {
+  0% {
+    left: 0;
+    top: -48px;
+  }
+  33% {
+    left: calc(100% - 50px);
+    top: -48px;
+  }
+  41% {
+    left: calc(100% - 2px);
+    top: 2px;
+  }
+  49% {
+    left: calc(100% - 50px);
+    top: calc(100% - 2px);
+  }
+  82% {
+    left: 0;
+    top: calc(100% - 2px);
+  }
+  90% {
+    left: -48px;
+    top: calc(100% - 50px);
+  }
+  100% {
+    left: 0;
+    top: -48px;
+  }
+}
+
+/* ._border-loop::before,
+._border-loop::after {
+  content: "";
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0; 
+}
+
+._border-loop::before {
+  top: 0;
+  left: 0;
+  border-top-color: black;
+  border-right-color: black;
+  animation: border 3s infinite linear;
+}
+
+._border-loop::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: black;
+  border-left-color: black;
+  animation: border2 3s 1.5s infinite linear;
+}
+
+@keyframes border {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  20% {
+    width: 100%;
+    height: 0;
+  }
+  40% {
+    width: 100%;
+    height: 100%;
+  }
+  60% {
+    height: 100%;
+    left:auto;
+    right: 0;
+    width: 0;
+  }
+  80%{
+    top: auto;
+    bottom: 0;  
+    height: 0;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+@keyframes border2 {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  20% {
+    width: 100%;
+    height: 0;
+  }
+  40% {
+    width: 100%;
+    height: 100%;
+  }
+  60% {
+    height: 100%;
+    right:auto;
+    left: 0;
+    width: 0;
+  }
+  80%{
+    bottom: auto;
+    top: 0;  
+    height: 0;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+} */

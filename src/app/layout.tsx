@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "./../providers/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppinsSemiBold = Poppins({ weight: "600", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "G. Sampaio",
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body style={{ colorScheme: "light" }} className={poppinsSemiBold.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
