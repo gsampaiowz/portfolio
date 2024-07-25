@@ -66,6 +66,7 @@ export const AnimatedContent = ({}) => {
       <motion.li variants={item}>
         <h2 className="text-xl">FullStack Developer</h2>
       </motion.li>
+
       <motion.li
         className="relative overflow-hidden p-[2px] _border-loop "
         variants={item}
@@ -82,24 +83,32 @@ export const AnimatedContent = ({}) => {
           <span>SQL Server</span>
         </div>
       </motion.li>
+
       <motion.li variants={item}>
         <div className="flex gap-8">
-          <Button className="w-40 btn-hover">Download C.V</Button>
+          <a download href="/cv.pdf">
+            <Button className="w-40 btn-hover">Download C.V</Button>
+          </a>
           <Button className="w-40 gap-2 btn-hover">
             My Projects <FaArrowRight />{" "}
           </Button>
         </div>
       </motion.li>
+
       <motion.li variants={item}>
         <div className="flex gap-8">
-          <FaLinkedin
-            size={50}
-            className="cursor-pointer rounded-[4px] hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] transition-colors duration-500"
-          />
-          <FaGithub
-            size={50}
-            className="cursor-pointer rounded-full p-1 hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] transition-colors duration-500"
-          />
+          <a target="_blank" href="https://www.linkedin.com/in/gsampaiowz/">
+            <FaLinkedin
+              size={50}
+              className="cursor-pointer rounded-[4px] hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] transition-colors duration-500"
+            />
+          </a>
+          <a target="_blank" href="https://github.com/gsampaiowz">
+            <FaGithub
+              size={50}
+              className="cursor-pointer rounded-full p-1 hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] transition-colors duration-500"
+            />
+          </a>
         </div>
       </motion.li>
     </motion.ul>

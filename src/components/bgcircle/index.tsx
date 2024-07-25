@@ -19,15 +19,15 @@ export const BgCircle = () => {
       title.addEventListener("mouseover", () => {
         bgCircle.style.width = "600px";
         bgCircle.style.height = "600px";
-        bgCircle.style.left = `${window.innerWidth / 2 - 300}px`;
-        bgCircle.style.top = `${window.innerHeight / 2 - 300}px`;
+        bgCircle.style.left = `calc(50vw - 300px)`;
+        bgCircle.style.top = `calc(50vh - 300px)`;
       });
 
       title.addEventListener("mouseout", () => {
         bgCircle.style.width = "500px";
         bgCircle.style.height = "500px";
-        bgCircle.style.left = `${window.innerWidth / 2 - 250}px`;
-        bgCircle.style.top = `${window.innerHeight / 2 - 250}px`;
+        bgCircle.style.left = `calc(50vw - 250px)`;
+        bgCircle.style.top = `calc(50vh - 250px)`;
       });
     }
   }, []);

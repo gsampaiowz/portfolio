@@ -16,7 +16,7 @@ export const Header = () => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="relative w-full h-20 max-w-5xl mx-auto"
+      className="relative w-full h-20 max-w-3xl mx-auto"
     >
       <div className="w-full h-full flex justify-between items-center">
         <h1 className="text-3xl cursor-pointer leading-[50px] myhover">

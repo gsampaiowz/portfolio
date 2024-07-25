@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ colorScheme: "light" }} className={poppinsSemiBold.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>{children}</ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">{children}</ThemeProvider>
       </body>
     </html>
   );
