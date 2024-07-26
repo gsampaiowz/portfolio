@@ -23,10 +23,10 @@ export const Header = () => {
           Gabriel Sampaio
         </h1>
         <nav className="flex items-center">
-          <ul className="flex flex-row gap-8 items-center">
-            <li className="cursor-pointer myhover2">About Me</li>
-            <li className="cursor-pointer myhover2">Projects</li>
-            <li className="cursor-pointer myhover2">Contact</li>
+          <ul className="flex flex-row gap-8 items-center _underline-hover">
+            <li className="_underline-hover-item">About Me</li>
+            <li className="_underline-hover-item">Projects</li>
+            <li className="_underline-hover-item">Contact</li>
             <li>
               <ThemeSwitch />
             </li>
