@@ -62,7 +62,8 @@ body {
   transition: color, background-color 500ms;
 }
 
-.myhover {
+/* HOVER NO TITULO */
+.hover-title {
   background: linear-gradient(to right, transparent, transparent),
     linear-gradient(
       to right,
@@ -76,30 +77,11 @@ body {
   transition: background-size 400ms;
 }
 
-.myhover:hover {
+.hover-title:hover {
   background-size: 0 2px, 100% 2px;
 }
 
-.myhover2 {
-  position: relative;
-  transition: color 0.3s ease-in-out;
-}
-
-.myhover2::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 3px;
-  background-color: hsl(var(--foreground));
-  transition: transform 0.5s ease-in-out;
-  transform: scaleX(0);
-}
-
-.myhover2:hover::before {
-  transform: scaleX(1);
-}
-
+/* HOVER NOS BOTOES DO INICIO*/
 .btn-hover {
   overflow: hidden;
   position: relative;
@@ -132,6 +114,8 @@ body {
   }
 }
 
+/* ANIMACAO TRAÇO CIRCULANDO EM LOOP */
+
 ._border-loop {
   overflow: hidden;
   transition: background-color 500ms;
@@ -163,7 +147,7 @@ body {
     top: 2px;
   }
   49% {
-    left: calc(100% - 50px);
+    left: calc(100% - 48px);
     top: calc(100% - 2px);
   }
   82% {
@@ -172,7 +156,7 @@ body {
   }
   90% {
     left: -48px;
-    top: calc(100% - 50px);
+    top: calc(100% - 48px);
   }
   100% {
     left: 0;
@@ -180,8 +164,10 @@ body {
   }
 }
 
+/* HOVER NOS LINKS DO NAV */
+
 ._underline-hover-item {
-  padding: 0 0.5em 0.25em;
+  padding: 5px 15px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -193,8 +179,8 @@ body {
 ._underline-hover-item:before {
   content: "";
   position: absolute;
-  inset: calc(100% - 3px) 0 0 0; /* 3px = the thickness */
-  background: #ce4f20; /* the color */
+  inset: calc(100% - 3px) 0 0 0; 
+  background: white;
   scale: 0 1;
   transition: 0.3s, translate 0s 0.3s;
 }

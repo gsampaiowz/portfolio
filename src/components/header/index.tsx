@@ -19,18 +19,16 @@ export const Header = () => {
       className="relative w-full h-20 max-w-3xl mx-auto"
     >
       <div className="w-full h-full flex justify-between items-center">
-        <h1 className="text-3xl cursor-pointer leading-[50px] myhover">
+        <h1 className="text-3xl cursor-pointer leading-[50px] hover-title">
           Gabriel Sampaio
         </h1>
-        <nav className="flex items-center">
-          <ul className="flex flex-row gap-8 items-center _underline-hover">
+        <nav className="flex items-center gap-8">
+          <ul className="flex flex-row items-center _underline-hover">
             <li className="_underline-hover-item">About Me</li>
             <li className="_underline-hover-item">Projects</li>
             <li className="_underline-hover-item">Contact</li>
-            <li>
-              <ThemeSwitch />
-            </li>
           </ul>
+              <ThemeSwitch />
         </nav>
       </div>
     </motion.header>
