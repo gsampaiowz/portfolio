@@ -71,14 +71,14 @@ body {
       rgba(255, 0, 180, 1),
       rgba(0, 100, 200, 1)
     );
-  background-size: 100% 2px, 0 2px;
+  background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
 
 .hover-title:hover {
-  background-size: 0 2px, 100% 2px;
+  background-size: 0 3px, 100% 3px;
 }
 
 /* HOVER NOS BOTOES DO INICIO*/
@@ -114,7 +114,7 @@ body {
   }
 }
 
-/* ANIMACAO TRAÇO CIRCULANDO EM LOOP */
+/* ANIMACAO TRAÇO CIRCULANDO EM LOOP
 
 ._border-loop {
   overflow: hidden;
@@ -134,13 +134,13 @@ body {
 }
 
 @keyframes borderloop {
-  0% {
+  1% {
     left: 0;
-    top: -48px;
+    top: -49px;
   }
   33% {
-    left: calc(100% - 50px);
-    top: -48px;
+    left: calc(100% - 49px);
+    top: -49px;
   }
   41% {
     left: calc(100% - 2px);
@@ -160,8 +160,30 @@ body {
   }
   100% {
     left: 0;
-    top: -48px;
+    top: -49px;
   }
+} */
+
+._border-loop::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: hsl(var(--foreground));
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  -webkit-animation: rotate 4s linear infinite;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
 }
 
 /* HOVER NOS LINKS DO NAV */
@@ -173,14 +195,11 @@ body {
   overflow: hidden;
   transition: 0.3s;
 }
-._underline-hover-item:hover {
-  color: #fff;
-}
 ._underline-hover-item:before {
   content: "";
   position: absolute;
-  inset: calc(100% - 3px) 0 0 0; 
-  background: white;
+  inset: calc(100% - 3px) 0 0 0;
+  background: hsl(var(--foreground));
   scale: 0 1;
   transition: 0.3s, translate 0s 0.3s;
 }
@@ -191,11 +210,14 @@ body {
   translate: 0;
   transition: 0.3s;
 }
-._underline-hover:hover ._underline-hover-item:has(~ ._underline-hover-item:hover):before {
+._underline-hover:hover
+  ._underline-hover-item:has(~ ._underline-hover-item:hover):before {
   translate: 100% 0;
   transition: 0.2s 0.2s, scale 0s 0.4s;
 }
-._underline-hover:hover ._underline-hover-item:hover ~ ._underline-hover-item:before {
+._underline-hover:hover
+  ._underline-hover-item:hover
+  ~ ._underline-hover-item:before {
   translate: -100% 0;
   transition: 0.2s 0.2s, scale 0s 0.4s;
 }
