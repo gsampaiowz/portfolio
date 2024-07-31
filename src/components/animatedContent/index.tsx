@@ -87,7 +87,7 @@ export const AnimatedContent = ({}) => {
           }
           style={{
             background: useMotionTemplate`
-              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, rgba(38, 38, 38, 1), hsl(var(--background)) 80%)
+              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, #2e2e2e, hsl(var(--background)) 100%)
             `,
           }}
         >
