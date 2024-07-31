@@ -114,55 +114,7 @@ body {
   }
 }
 
-/* ANIMACAO TRAÇO CIRCULANDO EM LOOP
-
-._border-loop {
-  overflow: hidden;
-  transition: background-color 500ms;
-}
-
-._border-loop::before {
-  content: "";
-  position: absolute;
-  background-color: hsl(var(--foreground));
-  width: 50px;
-  height: 50px;
-  z-index: -1;
-  left: 0;
-  top: -48px;
-  animation: borderloop 5s infinite linear;
-}
-
-@keyframes borderloop {
-  1% {
-    left: 0;
-    top: -49px;
-  }
-  33% {
-    left: calc(100% - 49px);
-    top: -49px;
-  }
-  41% {
-    left: calc(100% - 2px);
-    top: 2px;
-  }
-  49% {
-    left: calc(100% - 48px);
-    top: calc(100% - 2px);
-  }
-  82% {
-    left: 0;
-    top: calc(100% - 2px);
-  }
-  90% {
-    left: -48px;
-    top: calc(100% - 48px);
-  }
-  100% {
-    left: 0;
-    top: -49px;
-  }
-} */
+/* ANIMACAO TRAÇO CIRCULANDO EM LOOP */
 
 ._border-loop::before {
   content: "";
@@ -178,6 +130,17 @@ body {
   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
   -webkit-animation: rotate 4s linear infinite;
   animation: rotate 4s linear infinite;
+}
+
+._border-loop::after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  top: 2px;
+  left: 2px;
+  background-color: hsl(var(--background));
 }
 
 @keyframes rotate {

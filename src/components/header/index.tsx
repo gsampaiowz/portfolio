@@ -24,11 +24,11 @@ export const Header = () => {
         </h1>
         <nav className="flex items-center gap-8">
           <ul className="flex flex-row items-center _underline-hover">
-            <li className="_underline-hover-item">About Me</li>
+            <li className="_underline-hover-item">Home</li>
             <li className="_underline-hover-item">Projects</li>
             <li className="_underline-hover-item">Contact</li>
           </ul>
-              <ThemeSwitch />
+          <ThemeSwitch />
         </nav>
       </div>
     </motion.header>
