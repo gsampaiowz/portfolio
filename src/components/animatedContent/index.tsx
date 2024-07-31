@@ -72,7 +72,7 @@ export const AnimatedContent = ({}) => {
       </motion.li>
 
       <motion.li
-        className="relative overflow-hidden p-[2.5px] "
+        className="relative overflow-hidden p-[2px] "
         variants={item}
       >
         <motion.div
@@ -83,11 +83,11 @@ export const AnimatedContent = ({}) => {
           mouseY.set(e.clientY - top);
         }}
           className={
-            "text-lg flex gap-4 p-4 bg-background duration-500 [&>*]:cursor-pointer _border-loop"
+            "text-lg flex gap-4 p-4 duration-500 [&>*]:cursor-pointer _border-loop"
           }
           style={{
             background: useMotionTemplate`
-              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, rgba(38, 38, 38, 0.1), hsl(var(--background)) 100%)
+              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, rgba(38, 38, 38, 1), hsl(var(--background)) 80%)
             `,
           }}
         >
