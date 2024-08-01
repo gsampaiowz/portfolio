@@ -13,6 +13,7 @@ import { RiNextjsFill, RiReactjsLine } from "react-icons/ri";
 import { SiCsharp, SiDotnet, SiMicrosoftsqlserver } from "react-icons/si";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export default function Home() {
   const container = {
@@ -66,7 +67,7 @@ export default function Home() {
                     onClick={() => window.open("https://react.dev")}
                     size={50}
                   />
-                  <RiNextjsFill
+                  <TbBrandReactNative
                     onClick={() => window.open("https://nextjs.org/")}
                     size={50}
                   />

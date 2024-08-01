@@ -153,6 +153,7 @@ body {
 
 ._underline-hover-item {
   padding: 5px 15px;
+  margin: -2px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
