@@ -113,7 +113,7 @@ export default function Home() {
                 mouseY.set(e.clientY - top);
               }}
               className={
-                "text-lg flex gap-4 p-4 duration-500 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
+                "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md after:duration-500 duration-200"
               }
               style={{
                 background: useMotionTemplate`
