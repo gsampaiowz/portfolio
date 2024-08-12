@@ -10,7 +10,7 @@ import {
 } from "./../components/ui/tooltip";
 import { poppinsExtraLight } from "@/assets/fonts";
 import { RiNextjsFill, RiReactjsLine } from "react-icons/ri";
-import { SiCsharp, SiDotnet, SiMicrosoftsqlserver } from "react-icons/si";
+import { SiCsharp, SiDotnet, SiExpo, SiMicrosoftsqlserver } from "react-icons/si";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { TbBrandReactNative } from "react-icons/tb";
@@ -67,8 +67,8 @@ export default function Home() {
                     onClick={() => window.open("https://react.dev")}
                     size={50}
                   />
-                  <TbBrandReactNative
-                    onClick={() => window.open("https://nextjs.org/")}
+                  <SiExpo
+                    onClick={() => window.open("https://expo.dev/")}
                     size={50}
                   />
                   <SiCsharp
@@ -124,8 +124,8 @@ export default function Home() {
               <span onClick={() => window.open("https://react.dev")}>
                 React
               </span>
-              <span onClick={() => window.open("https://nextjs.org/")}>
-                NextJS
+              <span onClick={() => window.open("https://expo.dev/")}>
+                Expo
               </span>
               <span
                 onClick={() =>

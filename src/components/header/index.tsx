@@ -1,15 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import { ThemeSwitch } from "./../themeSwitch/index";
-
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-  },
-};
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+    },
+  };
+
+  const pathname = usePathname();
+
   return (
     <motion.header
       transition={{ duration: 1 }}
@@ -24,9 +28,43 @@ export const Header = () => {
         </h1>
         <nav className="flex items-center gap-8">
           <ul className="flex flex-row items-center _underline-hover">
-            <li className="_underline-hover-item">Home</li>
-            <li className="_underline-hover-item">Projects</li>
-            <li className="_underline-hover-item">Contact</li>
+            <li
+              className={`_underline-hover-item ${
+                pathname === "/"
+                  ? "text-[hsl(var(--background))] bg-[hsl(var(--foreground))] rounded-3xl"
+                  : ""
+              }`}
+            >
+              <Link
+                href={"/"}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="_underline-hover-item">
+              <Link
+                className={`link ${
+                  pathname === "/projects"
+                    ? "text-violet-400"
+                    : ""
+                }`}
+                href={"/projects"}
+              >
+                Projects
+              </Link>
+            </li>
+            <li className="_underline-hover-item">
+              <Link
+                className={`link ${
+                  pathname === "/contact"
+                    ? "text-[hsl(var(--background))] bg-[hsl(var(--foreground))]"
+                    : ""
+                }`}
+                href={"/contact"}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
           <ThemeSwitch />
         </nav>
