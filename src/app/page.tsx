@@ -59,7 +59,7 @@ export default function Home() {
                       " text-[64px] cursor-pointer"
                     }
                   >
-                    Open To Work
+                    Fullstack Developer
                   </h1>
                 </TooltipTrigger>
                 <TooltipContent className="flex gap-4 p-4 [&>*]:cursor-pointer">
@@ -98,7 +98,7 @@ export default function Home() {
             </TooltipProvider>
           </motion.li>
           <motion.li variants={item}>
-            <h2 className="text-xl">FullStack Developer</h2>
+            <h2 className="text-2xl">Open to Work</h2>
           </motion.li>
 
           <motion.li

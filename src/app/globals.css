@@ -67,9 +67,8 @@ body {
   background: linear-gradient(to right, transparent, transparent),
     linear-gradient(
       to right,
-      rgba(255, 0, 0, 1),
-      rgba(255, 0, 180, 1),
-      rgba(0, 100, 200, 1)
+      hsl(var(--foreground)),
+      hsl(var(--foreground))
     );
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
@@ -155,6 +154,7 @@ body {
   padding: 5px 25px;
   margin: -2px;
   cursor: pointer;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
   transition: 0.3s;
@@ -163,7 +163,6 @@ body {
   content: "";
   position: absolute;
   inset: calc(100% - 3px) 0 0 0;
-  width: 80%;
   margin: 0 auto;
   background: hsl(var(--foreground));
   scale: 0 1;

@@ -27,7 +27,7 @@ export const Header = () => {
           Gabriel Sampaio
         </h1>
         <nav className="flex items-center gap-8">
-          <ul className="flex flex-row items-center _underline-hover">
+          <ul className="flex flex-row items-center _underline-hover ">
             <li
               className={`_underline-hover-item ${
                 pathname === "/"
@@ -35,35 +35,25 @@ export const Header = () => {
                   : ""
               }`}
             >
-              <Link
-                href={"/"}
-              >
-                Home
-              </Link>
+              <Link href={"/"}>Home</Link>
             </li>
-            <li className="_underline-hover-item">
-              <Link
-                className={`link ${
-                  pathname === "/projects"
-                    ? "text-violet-400"
-                    : ""
-                }`}
-                href={"/projects"}
-              >
-                Projects
-              </Link>
+            <li
+              className={`_underline-hover-item ${
+                pathname === "/projects"
+                  ? "text-[hsl(var(--background))] bg-[hsl(var(--foreground))] rounded-3xl"
+                  : ""
+              }`}
+            >
+              <Link href={"/projects"}>Projects</Link>
             </li>
-            <li className="_underline-hover-item">
-              <Link
-                className={`link ${
-                  pathname === "/contact"
-                    ? "text-[hsl(var(--background))] bg-[hsl(var(--foreground))]"
-                    : ""
-                }`}
-                href={"/contact"}
-              >
-                Contact
-              </Link>
+            <li
+              className={`_underline-hover-item ${
+                pathname === "/contact"
+                  ? "text-[hsl(var(--background))] bg-[hsl(var(--foreground))] rounded-3xl"
+                  : ""
+              }`}
+            >
+              <Link href={"/contact"}>Contact</Link>
             </li>
           </ul>
           <ThemeSwitch />
