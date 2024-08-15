@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import ThemeSwitch from "./../themeSwitch/index";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Nav from "../nav";
 

@@ -1,6 +1,6 @@
 "use client";
-import BgCircle  from "@/components/bgcircle";
-import Container  from "./../components/container/index";
+import BgCircle from "@/components/bgcircle";
+import Container from "./../components/container/index";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import {
   Tooltip,
@@ -10,7 +10,12 @@ import {
 } from "./../components/ui/tooltip";
 import { poppinsExtraLight } from "@/assets/fonts";
 import { RiNextjsFill, RiReactjsLine } from "react-icons/ri";
-import { SiCsharp, SiDotnet, SiExpo, SiMicrosoftsqlserver } from "react-icons/si";
+import {
+  SiCsharp,
+  SiDotnet,
+  SiExpo,
+  SiMicrosoftsqlserver,
+} from "react-icons/si";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { TbBrandReactNative } from "react-icons/tb";
@@ -114,7 +119,7 @@ export default function Home() {
                 mouseY.set(e.clientY - top);
               }}
               className={
-                "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md after:duration-500 duration-200"
+                "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
               }
               style={{
                 background: useMotionTemplate`
@@ -125,9 +130,7 @@ export default function Home() {
               <span onClick={() => window.open("https://react.dev")}>
                 React
               </span>
-              <span onClick={() => window.open("https://expo.dev/")}>
-                Expo
-              </span>
+              <span onClick={() => window.open("https://expo.dev/")}>Expo</span>
               <span
                 onClick={() =>
                   window.open(
@@ -162,9 +165,7 @@ export default function Home() {
                 <Button className="w-40 btn-hover">Download C.V</Button>
               </a>
               <Button className="w-40 gap-2 btn-hover">
-                <Link href="/projects">
-                My Projects 
-                </Link>
+                <Link href="/projects">My Projects</Link>
                 <FaArrowRight />
               </Button>
             </div>
@@ -175,13 +176,13 @@ export default function Home() {
               <a target="_blank" href="https://www.linkedin.com/in/gsampaiowz/">
                 <FaLinkedin
                   size={50}
-                  className="cursor-pointer rounded-[4px] hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] transition-colors duration-500"
+                  className="cursor-pointer text-[hsl(var(--primary))] rounded-[4px] hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] "
                 />
               </a>
               <a target="_blank" href="https://github.com/gsampaiowz">
                 <FaGithub
                   size={50}
-                  className="cursor-pointer rounded-full p-1 hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] transition-colors duration-500"
+                  className="cursor-pointer text-[hsl(var(--primary))] rounded-full p-1 hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] "
                 />
               </a>
             </div>
