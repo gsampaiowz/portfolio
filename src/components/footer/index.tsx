@@ -9,7 +9,7 @@ const container = {
   },
 };
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <motion.footer
       transition={{ duration: 1 }}

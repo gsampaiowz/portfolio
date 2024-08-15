@@ -1,6 +1,6 @@
 "use client";
-import { BgCircle } from "@/components/bgcircle";
-import { Container } from "./../components/container/index";
+import BgCircle  from "@/components/bgcircle";
+import Container  from "./../components/container/index";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import {
   Tooltip,
@@ -14,6 +14,7 @@ import { SiCsharp, SiDotnet, SiExpo, SiMicrosoftsqlserver } from "react-icons/si
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { TbBrandReactNative } from "react-icons/tb";
+import Link from "next/link";
 
 export default function Home() {
   const container = {
@@ -161,7 +162,10 @@ export default function Home() {
                 <Button className="w-40 btn-hover">Download C.V</Button>
               </a>
               <Button className="w-40 gap-2 btn-hover">
-                My Projects <FaArrowRight />
+                <Link href="/projects">
+                My Projects 
+                </Link>
+                <FaArrowRight />
               </Button>
             </div>
           </motion.li>

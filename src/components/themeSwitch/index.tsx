@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { FaRegMoon, FaSun } from "react-icons/fa";
 
-export const ThemeSwitch = () => {
+export default function ThemeSwitch() {
     
   const { setTheme, theme } = useTheme();
 

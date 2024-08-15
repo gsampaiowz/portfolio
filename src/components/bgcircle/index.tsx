@@ -3,14 +3,15 @@
 import { useEffect } from "react";
 import { motion } from 'framer-motion';
 
-const container = {
-  hidden: { opacity: 0},
-  visible: {
-    opacity: 1
-  },
-}
 
-export const BgCircle = () => {
+export default function BgCircle() {
+  const container = {
+    hidden: { opacity: 0},
+    visible: {
+      opacity: 1
+    },
+  }
+
   useEffect(() => {
     const bgCircle = window.document.getElementById("bgcircle");
     const title = window.document.getElementById("title");
@@ -31,6 +32,7 @@ export const BgCircle = () => {
       });
     }
   }, []);
+  
   return (
     <motion.div 
     transition={{ duration: 1 }} variants={container} initial="hidden" animate="visible"
