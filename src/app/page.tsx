@@ -8,8 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./../components/ui/tooltip";
-import { poppinsExtraLight } from "@/assets/fonts";
-import { RiNextjsFill, RiReactjsLine } from "react-icons/ri";
+import { RiReactjsLine } from "react-icons/ri";
 import {
   SiCsharp,
   SiDotnet,
@@ -18,7 +17,6 @@ import {
 } from "react-icons/si";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { TbBrandReactNative } from "react-icons/tb";
 import Link from "next/link";
 
 export default function Home() {
@@ -58,17 +56,11 @@ export default function Home() {
             <TooltipProvider>
               <Tooltip delayDuration={0}>
                 <TooltipTrigger>
-                  <h1
-                    id="title"
-                    className={
-                      poppinsExtraLight.className +
-                      " text-[64px] cursor-pointer"
-                    }
-                  >
+                  <h1 id="title" className="text-[64px] cursor-pointer">
                     Fullstack Developer
                   </h1>
                 </TooltipTrigger>
-                <TooltipContent className="flex gap-4 p-4 [&>*]:cursor-pointer">
+                <TooltipContent className="flex gap-4 p-4 [&>*]:cursor-pointer [&>*]:text-[hsl(var(--primary))]">
                   <RiReactjsLine
                     onClick={() => window.open("https://react.dev")}
                     size={50}

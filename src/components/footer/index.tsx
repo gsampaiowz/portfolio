@@ -1,5 +1,4 @@
-"use client"
-import { poppinsRegular } from "@/assets/fonts";
+"use client";
 import { motion } from "framer-motion";
 
 const container = {
@@ -19,10 +18,8 @@ export default function Footer() {
       className="w-full h-20 absolute bottom-0"
     >
       <div className="w-full h-full flex justify-center items-center">
-        <p className={poppinsRegular.className + " text-xl"}>
-          2024 ©
-        </p>
+        <p className=" text-xl">2024 ©</p>
       </div>
     </motion.footer>
   );
-};
+}

@@ -5,7 +5,7 @@ import ThemeProvider from "./../providers/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-const poppinsSemiBold = Poppins({ weight: "600", subsets: ["latin"] });
+const mainFont = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "G. Sampaio",
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         style={{ colorScheme: "light" }}
-        className={poppinsSemiBold.className}
+        className={mainFont.className}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
