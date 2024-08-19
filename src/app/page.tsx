@@ -1,7 +1,7 @@
 "use client";
 import BgCircle from "@/components/bgcircle";
 import Container from "./../components/container/index";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Tooltip,
   TooltipContent,
@@ -43,10 +43,6 @@ export default function Home() {
     },
   };
 
-  //CONFIG PRO EFEITO HOVER
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
   return (
     <>
       <BgCircle />
@@ -74,22 +70,10 @@ export default function Home() {
             <TooltipProvider>
               <Tooltip delayDuration={250}>
                 <TooltipTrigger>
-                  <motion.div
-                    onMouseMove={(e) => {
-                      const { left, top } =
-                        e.currentTarget.getBoundingClientRect();
-
-                      mouseX.set(e.clientX - left);
-                      mouseY.set(e.clientY - top);
-                    }}
+                  <div
                     className={
                       "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
                     }
-                    style={{
-                      background: useMotionTemplate`
-              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, rgb(131, 131, 131, 0.25), hsl(var(--background)) 100%)
-            `,
-                    }}
                   >
                     <span onClick={() => window.open("https://react.dev")}>
                       React
@@ -122,9 +106,9 @@ export default function Home() {
                     >
                       SQL Server
                     </span>
-                  </motion.div>
+                  </div>
                 </TooltipTrigger>
-                <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer [&>*]:text-[hsl(var(--primary))]">
+                <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer [&>*]:text-primary">
                   <RiReactjsLine
                     onClick={() => window.open("https://react.dev")}
                     size={50}
@@ -177,13 +161,13 @@ export default function Home() {
               <a target="_blank" href="https://www.linkedin.com/in/gsampaiowz/">
                 <FaLinkedin
                   size={50}
-                  className="cursor-pointer text-[hsl(var(--primary))] rounded-[4px] hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] "
+                  className="cursor-pointer text-primary rounded-[4px] hover:text-background hover:bg-primary "
                 />
               </a>
               <a target="_blank" href="https://github.com/gsampaiowz">
                 <FaGithub
                   size={50}
-                  className="cursor-pointer text-[hsl(var(--primary))] rounded-full p-1 hover:text-[hsl(var(--background))] hover:bg-[hsl(var(--primary))] "
+                  className="cursor-pointer text-primary rounded-full p-1 hover:text-background hover:bg-primary "
                 />
               </a>
             </div>

@@ -63,7 +63,7 @@ export default function Nav({
                   layoutId="clicked-button"
                   transition={{ duration: 0.2 }}
                   className={cn(
-                    "absolute inset-0 rounded-full bg-[hsl(var(--primary))]",
+                    "absolute inset-0 rounded-full bg-primary",
                     activeTabClassName
                   )}
                 />
@@ -74,8 +74,8 @@ export default function Nav({
                 className={cn(
                   "relative block font-medium duration-200",
                   pathname.slice(1) === tab.page
-                    ? "text-[hsl(var(--background))] delay-100"
-                    : "text-[hsl(var(--primary))] hover:text-[hsl(var(--muted-foreground))] ",
+                    ? "text-background delay-100"
+                    : "text-primary hover:text-muted-foreground ",
                 )}
               >
                 {tab.title}

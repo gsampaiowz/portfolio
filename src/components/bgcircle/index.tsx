@@ -20,17 +20,11 @@ export default function BgCircle() {
     if (title && bgCircle) {
 
       title.addEventListener("mouseover", () => {
-        bgCircle.style.width = "600px";
-        bgCircle.style.height = "600px";
-        bgCircle.style.left = `calc(50% - 300px)`;
-        bgCircle.style.top = `calc(50% - 300px)`;
+        bgCircle.style.filter = "blur(12px)";
       });
-
+      
       title.addEventListener("mouseout", () => {
-        bgCircle.style.width = "500px";
-        bgCircle.style.height = "500px";
-        bgCircle.style.left = `calc(50% - 250px)`;
-        bgCircle.style.top = `calc(50% - 250px)`;
+        bgCircle.style.filter = "blur(24px)";
       });
     }
   }, []);
@@ -39,7 +33,7 @@ export default function BgCircle() {
     <motion.div 
     transition={{ duration: 1 }} variants={container} initial="hidden" animate="visible"
       id="bgcircle"
-      className="transition-all border-gray-500 border-[8px] w-[500px] h-[500px] absolute top-[calc(50%-250px)] -z-[1] left-[calc(50%-250px)] rounded-full blur-md"
+      className="duration-500 border-primary/50 border-[8px] w-[500px] h-[500px] absolute top-[calc(50%-250px)] -z-[1] left-[calc(50%-250px)] rounded-full blur-xl"
     ></motion.div>
   );
 };

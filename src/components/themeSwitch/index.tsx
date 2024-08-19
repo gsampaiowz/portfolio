@@ -21,7 +21,7 @@ export default function ThemeSwitch() {
     />
   ) : (
     <FaSun
-    className="hover:size-7 size-5 cursor-pointer text-[hsl(var(--primary))] duration-500"
+    className="hover:size-7 size-5 cursor-pointer text-primary duration-500"
       onClick={() => setTheme("dark")}
     />
   );

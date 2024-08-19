@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { BsGithub } from "react-icons/bs";
+import Button from "../button";
 
 type projectCardProps = {
   img: string;
@@ -20,17 +22,27 @@ export default function ProjectCard({
 }: projectCardProps) {
   return (
     <div className="flex flex-col gap-2">
-      <Image src={img} className="w-80 h-52 rounded-xl" width={320} height={208} alt={`Projeto ${nome}`} />
-      <h1>{nome}</h1>
-      <p>{description}</p>
+      <div className="relative w-80 h-52 rounded-xl duration-300 cursor-pointer overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
+        <Image
+          src={img}
+          className="w-full h-full object-cover duration-300 group-hover:scale-125"
+          width={320}
+          height={208}
+          alt={`Projeto ${nome}`}
+        />
+      </div>
+      <h1 className="text-xl">{nome}</h1>
+      <p className="text-sm">{description}</p>
       <div className="flex gap-2">{techs}</div>
-      <div className="flex justify-between">
-        <a className="flex gap-2" href={link} target="_blank">
-          Acessar <ArrowRight />
+      <div className="flex justify-between [&>a]:text-background [&>a]:bg-primary [&>a]:rounded-lg [&>a]:flex [&>a]:transition-all [&>a]:items-center [&>a]:gap-2 [&>a]:py-2 [&>a]:px-3">
+        <a className="hover:pr-6 btn-hover group hover:bg-primary/90" href={link} target="_blank">
+          Acessar
+          <span className="transition-transform group-hover:translate-x-4">
+            <ArrowRight />
+          </span>
         </a>
-        <a href={repo} target="_blank">
-          Repositório
-        </a>
+
+        <Button text="Repositório" link={link} icon={<BsGithub/>}/>
       </div>
     </div>
   );
