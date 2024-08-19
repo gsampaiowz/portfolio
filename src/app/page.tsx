@@ -43,7 +43,7 @@ export default function Home() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   return (
-    <main>
+    <>
       <BgCircle />
       <Container>
         <motion.ul
@@ -53,14 +53,73 @@ export default function Home() {
           animate="visible"
         >
           <motion.li variants={item}>
+            <h1 className="text-2xl text-center">Gabriel Sampaio</h1>
+            <h1 id="title" className="text-[64px] cursor-pointer">
+              Fullstack Developer
+            </h1>
+          </motion.li>
+          <motion.li variants={item}>
+            <h2 className="text-2xl">Open to Work</h2>
+          </motion.li>
+
+          <motion.li
+            className="relative overflow-hidden p-[5px] rounded-lg"
+            variants={item}
+          >
             <TooltipProvider>
-              <Tooltip delayDuration={0}>
+              <Tooltip delayDuration={250}>
                 <TooltipTrigger>
-                  <h1 id="title" className="text-[64px] cursor-pointer">
-                    Fullstack Developer
-                  </h1>
+                  <motion.div
+                    onMouseMove={(e) => {
+                      const { left, top } =
+                        e.currentTarget.getBoundingClientRect();
+
+                      mouseX.set(e.clientX - left);
+                      mouseY.set(e.clientY - top);
+                    }}
+                    className={
+                      "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
+                    }
+                    style={{
+                      background: useMotionTemplate`
+              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, rgb(131, 131, 131, 0.25), hsl(var(--background)) 100%)
+            `,
+                    }}
+                  >
+                    <span onClick={() => window.open("https://react.dev")}>
+                      React
+                    </span>
+                    <span onClick={() => window.open("https://expo.dev/")}>
+                      Expo
+                    </span>
+                    <span
+                      onClick={() =>
+                        window.open(
+                          "https://learn.microsoft.com/pt-br/dotnet/csharp/"
+                        )
+                      }
+                    >
+                      C#
+                    </span>
+                    <span
+                      onClick={() =>
+                        window.open("https://dotnet.microsoft.com/pt-br/")
+                      }
+                    >
+                      Asp.Net
+                    </span>
+                    <span
+                      onClick={() =>
+                        window.open(
+                          "https://www.microsoft.com/pt-br/sql-server/sql-server-2022"
+                        )
+                      }
+                    >
+                      SQL Server
+                    </span>
+                  </motion.div>
                 </TooltipTrigger>
-                <TooltipContent className="flex gap-4 p-4 [&>*]:cursor-pointer [&>*]:text-[hsl(var(--primary))]">
+                <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer [&>*]:text-[hsl(var(--primary))]">
                   <RiReactjsLine
                     onClick={() => window.open("https://react.dev")}
                     size={50}
@@ -95,61 +154,6 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
           </motion.li>
-          <motion.li variants={item}>
-            <h2 className="text-2xl">Open to Work</h2>
-          </motion.li>
-
-          <motion.li
-            className="relative overflow-hidden p-[5px] rounded-lg"
-            variants={item}
-          >
-            <motion.div
-              onMouseMove={(e) => {
-                const { left, top } = e.currentTarget.getBoundingClientRect();
-
-                mouseX.set(e.clientX - left);
-                mouseY.set(e.clientY - top);
-              }}
-              className={
-                "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
-              }
-              style={{
-                background: useMotionTemplate`
-              radial-gradient(100px circle at ${mouseX}px ${mouseY}px, rgb(131, 131, 131, 0.25), hsl(var(--background)) 100%)
-            `,
-              }}
-            >
-              <span onClick={() => window.open("https://react.dev")}>
-                React
-              </span>
-              <span onClick={() => window.open("https://expo.dev/")}>Expo</span>
-              <span
-                onClick={() =>
-                  window.open(
-                    "https://learn.microsoft.com/pt-br/dotnet/csharp/"
-                  )
-                }
-              >
-                C#
-              </span>
-              <span
-                onClick={() =>
-                  window.open("https://dotnet.microsoft.com/pt-br/")
-                }
-              >
-                DotNet
-              </span>
-              <span
-                onClick={() =>
-                  window.open(
-                    "https://www.microsoft.com/pt-br/sql-server/sql-server-2022"
-                  )
-                }
-              >
-                SQL Server
-              </span>
-            </motion.div>
-          </motion.li>
 
           <motion.li variants={item}>
             <div className="flex gap-8">
@@ -181,6 +185,6 @@ export default function Home() {
           </motion.li>
         </motion.ul>
       </Container>
-    </main>
+    </>
   );
 }

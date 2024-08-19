@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        style={{ colorScheme: "light" }}
+        style={{ colorScheme: "dark" }}
         className={mainFont.className}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">

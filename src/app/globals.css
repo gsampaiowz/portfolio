@@ -69,7 +69,7 @@
 }
 
 body {
-  transition: color, background-color 500ms;
+  transition: color, background-color 250ms ease-in;
 }
 
 /* HOVER NO TITULO */

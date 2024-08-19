@@ -15,10 +15,10 @@ export default function Footer() {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="w-full h-20 absolute bottom-0"
+      className="w-full mt-8 border-t-2 border-[hsl(var(--border))]"
     >
       <div className="w-full h-full flex justify-center items-center">
-        <p className=" text-xl">2024 ©</p>
+        <p className="text-lg">2024 © Gabriel Sampaio</p>
       </div>
     </motion.footer>
   );
