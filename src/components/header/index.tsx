@@ -4,6 +4,7 @@ import ThemeSwitch from "./../themeSwitch/index";
 import { usePathname } from "next/navigation";
 import Nav from "../nav";
 import logo from "@/app/favicon.ico"
+import Image from "next/image";
 
 export default function Header() {
   const container = {
@@ -27,7 +28,7 @@ export default function Header() {
         {/* <h1 className="text-3xl cursor-pointer leading-[50px] hover-title">
           Gabriel Sampaio
         </h1> */}
-        <img src={logo.src} width={40} alt="" />
+        <Image src={logo.src} width={40} height={40} alt="Logo escrito GS" />
         <Nav />
         <ThemeSwitch />
       </div>

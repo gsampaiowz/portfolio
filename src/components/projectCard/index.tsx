@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 type projectCardProps = {
   img: string;
@@ -19,7 +20,7 @@ export default function ProjectCard({
 }: projectCardProps) {
   return (
     <div className="flex flex-col gap-2">
-      <img src={img} className="w-80 h-52 rounded-xl" alt={`Projeto ${nome}`} />
+      <Image src={img} className="w-80 h-52 rounded-xl" width={320} height={208} alt={`Projeto ${nome}`} />
       <h1>{nome}</h1>
       <p>{description}</p>
       <div className="flex gap-2">{techs}</div>

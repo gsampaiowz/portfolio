@@ -19,7 +19,10 @@ import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+// ? PAGINA INICIAL
+
 export default function Home() {
+  //CONFIG DO MOTION
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -40,8 +43,10 @@ export default function Home() {
     },
   };
 
+  //CONFIG PRO EFEITO HOVER
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
   return (
     <>
       <BgCircle />
