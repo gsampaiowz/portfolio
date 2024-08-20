@@ -24,7 +24,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       className="w-full overflow-hidden"
     >
       <motion.div
-        className="pointer-events-none absolute -inset-px rounded-xl opacity-100 transition duration-300"
+        className="pointer-events-none absolute w-full -inset-px opacity-100 transition duration-300"
         style={{
           background: useMotionTemplate`
             radial-gradient(200px circle at ${mouseX}px ${mouseY}px, rgba(100, 100, 100, 0.25), transparent 70%)
