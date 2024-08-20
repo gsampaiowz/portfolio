@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
 export default function Button({
@@ -17,7 +18,10 @@ export default function Button({
   return (
     <button
       onClick={() => link && router.push(link)}
-      className={`text-background justify-center bg-primary rounded-md flex transition-all items-center gap-2 py-2 px-3 btn-hover hover:bg-primary/90 ${additionalClass}`}
+      className={cn(
+        "text-background justify-center bg-primary rounded-md flex transition-all items-center gap-2 py-2 px-3 btn-hover hover:bg-primary/90",
+        additionalClass
+      )}
     >
       {text}
       {icon && (
