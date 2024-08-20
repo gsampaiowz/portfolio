@@ -2,22 +2,10 @@
 import BgCircle from "@/components/bgcircle";
 import Container from "./../components/container/index";
 import { motion } from "framer-motion";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./../components/ui/tooltip";
-import { RiReactjsLine } from "react-icons/ri";
-import {
-  SiCsharp,
-  SiDotnet,
-  SiExpo,
-  SiMicrosoftsqlserver,
-} from "react-icons/si";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "@/components/button";
-import { BriefcaseBusiness } from "lucide-react";
+import { BriefcaseBusiness, Download, Mail } from "lucide-react";
+import HomeTechs from "@/components/home-techs";
 
 // ? PAGINA INICIAL
 
@@ -72,93 +60,25 @@ export default function Home() {
             className="relative overflow-hidden p-[5px] rounded-lg"
             variants={item}
           >
-            <TooltipProvider>
-              <Tooltip delayDuration={250}>
-                <TooltipTrigger>
-                  <div
-                    className={
-                      "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
-                    }
-                  >
-                    <span onClick={() => window.open("https://react.dev")}>
-                      React
-                    </span>
-                    <span onClick={() => window.open("https://expo.dev/")}>
-                      Expo
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.open(
-                          "https://learn.microsoft.com/pt-br/dotnet/csharp/"
-                        )
-                      }
-                    >
-                      C#
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.open("https://dotnet.microsoft.com/pt-br/")
-                      }
-                    >
-                      Asp.Net
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.open(
-                          "https://www.microsoft.com/pt-br/sql-server/sql-server-2022"
-                        )
-                      }
-                    >
-                      SQL Server
-                    </span>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer">
-                  <RiReactjsLine
-                    onClick={() => window.open("https://react.dev")}
-                    size={32}
-                  />
-                  <SiExpo
-                    onClick={() => window.open("https://expo.dev/")}
-                    size={32}
-                  />
-                  <SiCsharp
-                    onClick={() =>
-                      window.open(
-                        "https://learn.microsoft.com/pt-br/dotnet/csharp/"
-                      )
-                    }
-                    size={32}
-                  />
-                  <SiDotnet
-                    onClick={() =>
-                      window.open("https://dotnet.microsoft.com/pt-br/")
-                    }
-                    size={32}
-                  />
-                  <SiMicrosoftsqlserver
-                    onClick={() =>
-                      window.open(
-                        "https://www.microsoft.com/pt-br/sql-server/sql-server-2022"
-                      )
-                    }
-                    size={32}
-                  />
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            <HomeTechs/>
           </motion.li>
 
           <motion.li variants={item}>
             <div className="flex gap-8">
               <a download href="/cv.pdf">
-                <Button text="Download C.V" additionalClass="w-40" />
+                <Button text="Download C.V" icon={<Download size={20} />} additionalClass="w-44" />
               </a>
+              <Button
+                text="Contact Me"
+                link="mailto:gabrielsampaio1216@gmail.com"
+                icon={<Mail size={20}/>}
+                additionalClass="w-44"
+              />
               <Button
                 text="My Projects"
                 link="/projects"
                 icon={<FaArrowRight />}
-                additionalClass="w-40 group hover:pr-6"
+                additionalClass="w-44 group hover:pr-6"
               />
             </div>
           </motion.li>
