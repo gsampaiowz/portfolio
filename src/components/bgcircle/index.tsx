@@ -33,7 +33,7 @@ export default function BgCircle() {
     <motion.div 
     transition={{ duration: 1 }} variants={container} initial="hidden" animate="visible"
       id="bgcircle"
-      className="duration-500 border-gray-700 border-[8px] w-[500px] h-[500px] absolute top-[calc(50%-250px)] -z-[1] left-[calc(50%-250px)] rounded-full blur-lg"
+      className="duration-500 border-gray-500 border-[12px] w-[500px] h-[500px] absolute top-[calc(50%-250px)] -z-[1] left-[calc(50%-250px)] rounded-full blur-lg"
     ></motion.div>
   );
 };

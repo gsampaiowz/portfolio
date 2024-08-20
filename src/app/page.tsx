@@ -113,14 +113,14 @@ export default function Home() {
                     </span>
                   </div>
                 </TooltipTrigger>
-                <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer [&>*]:text-primary">
+                <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer">
                   <RiReactjsLine
                     onClick={() => window.open("https://react.dev")}
-                    size={50}
+                    size={32}
                   />
                   <SiExpo
                     onClick={() => window.open("https://expo.dev/")}
-                    size={50}
+                    size={32}
                   />
                   <SiCsharp
                     onClick={() =>
@@ -128,13 +128,13 @@ export default function Home() {
                         "https://learn.microsoft.com/pt-br/dotnet/csharp/"
                       )
                     }
-                    size={50}
+                    size={32}
                   />
                   <SiDotnet
                     onClick={() =>
                       window.open("https://dotnet.microsoft.com/pt-br/")
                     }
-                    size={50}
+                    size={32}
                   />
                   <SiMicrosoftsqlserver
                     onClick={() =>
@@ -142,7 +142,7 @@ export default function Home() {
                         "https://www.microsoft.com/pt-br/sql-server/sql-server-2022"
                       )
                     }
-                    size={50}
+                    size={32}
                   />
                 </TooltipContent>
               </Tooltip>
