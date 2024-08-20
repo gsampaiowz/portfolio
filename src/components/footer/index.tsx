@@ -18,7 +18,7 @@ export default function Footer() {
       className="w-full mt-8 pb-4"
     >
       <div className="w-full h-full flex justify-center items-center">
-        <p className="text-md">2024 © Gabriel Sampaio</p>
+        <p className="text-sm">2024 © Gabriel Sampaio</p>
       </div>
     </motion.footer>
   );

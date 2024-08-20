@@ -1,7 +1,7 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import Button from "../button";
+import { FaArrowRight } from "react-icons/fa";
 
 type projectCardProps = {
   img: string;
@@ -35,14 +35,13 @@ export default function ProjectCard({
       <p className="text-sm">{description}</p>
       <div className="flex gap-2">{techs}</div>
       <div className="flex justify-between [&>a]:text-background [&>a]:bg-primary [&>a]:rounded-lg [&>a]:flex [&>a]:transition-all [&>a]:items-center [&>a]:gap-2 [&>a]:py-2 [&>a]:px-3">
-        <a className="hover:pr-6 btn-hover group hover:bg-primary/90" href={link} target="_blank">
-          Acessar
-          <span className="transition-transform group-hover:translate-x-4">
-            <ArrowRight />
-          </span>
-        </a>
-
-        <Button text="Repositório" link={link} icon={<BsGithub/>}/>
+        <Button
+          text="Ver Projeto"
+          icon={<FaArrowRight />}
+          link={link}
+          additionalClass="group hover:pr-6"
+        />
+        <Button text="Repositório" link={repo} icon={<BsGithub />} />
       </div>
     </div>
   );

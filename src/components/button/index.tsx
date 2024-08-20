@@ -1,27 +1,30 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
 
 export default function Button({
   text,
   icon,
   additionalClass,
-  link
+  link,
 }: {
   text: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   additionalClass?: string;
-  link?: string
+  link?: string;
 }) {
-
-    const router = useRouter();
+  const router = useRouter();
 
   return (
     <button
-    onClick={() => link && router.push(link)}
-      className={`text-background bg-primary rounded-lg flex transition-all items-center gap-2 py-2 px-3 btn-hover hover:bg-primary/90 ${additionalClass}`}
+      onClick={() => link && router.push(link)}
+      className={`text-background justify-center bg-primary rounded-md flex transition-all items-center gap-2 py-2 px-3 btn-hover hover:bg-primary/90 ${additionalClass}`}
     >
       {text}
-      {icon}
+      {icon && (
+        <span className="transition-transform group-hover:translate-x-3">
+          {icon}
+        </span>
+      )}
     </button>
   );
 }

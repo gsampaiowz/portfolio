@@ -32,13 +32,17 @@ export default function Nav({
       page: "projects"
     },
     {
+      title: "Skills",
+      page: "skills"
+    },
+    {
+      title: "Me",
+      page: "me"
+    },
+    {
       title: "Contact",
       page: "contact"
     },
-    {
-      title: "Skills",
-      page: "skills"
-    }
   ];
 
   return (

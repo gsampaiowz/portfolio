@@ -16,8 +16,8 @@ import {
   SiMicrosoftsqlserver,
 } from "react-icons/si";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import Button from "@/components/button";
+import { BriefcaseBusiness } from "lucide-react";
 
 // ? PAGINA INICIAL
 
@@ -53,14 +53,19 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <motion.li variants={item}>
-            <h1 className="text-2xl text-center">Gabriel Sampaio</h1>
-            <h1 id="title" className="text-[64px] cursor-pointer">
+          <motion.li className="flex flex-col items-center" variants={item}>
+            <h1 className="text-2xl text-center hover-title cursor-pointer pb-1">
+              Gabriel Sampaio
+            </h1>
+
+            <h1 id="title" className="text-[64px] cursor-pointer leading-none">
               Fullstack Developer
             </h1>
           </motion.li>
-          <motion.li variants={item}>
+
+          <motion.li variants={item} className="flex gap-4 items-center">
             <h2 className="text-2xl">Open to Work</h2>
+            <BriefcaseBusiness size={24} />
           </motion.li>
 
           <motion.li
@@ -147,12 +152,14 @@ export default function Home() {
           <motion.li variants={item}>
             <div className="flex gap-8">
               <a download href="/cv.pdf">
-                <Button className="w-40 btn-hover">Download C.V</Button>
+                <Button text="Download C.V" additionalClass="w-40" />
               </a>
-              <Button className="w-40 gap-2 btn-hover">
-                <Link href="/projects">My Projects</Link>
-                <FaArrowRight />
-              </Button>
+              <Button
+                text="My Projects"
+                link="/projects"
+                icon={<FaArrowRight />}
+                additionalClass="w-40 group hover:pr-6"
+              />
             </div>
           </motion.li>
 

@@ -24,7 +24,7 @@ export default function BgCircle() {
       });
       
       title.addEventListener("mouseout", () => {
-        bgCircle.style.filter = "blur(24px)";
+        bgCircle.style.filter = "blur(16px)";
       });
     }
   }, []);
@@ -33,7 +33,7 @@ export default function BgCircle() {
     <motion.div 
     transition={{ duration: 1 }} variants={container} initial="hidden" animate="visible"
       id="bgcircle"
-      className="duration-500 border-primary/50 border-[8px] w-[500px] h-[500px] absolute top-[calc(50%-250px)] -z-[1] left-[calc(50%-250px)] rounded-full blur-xl"
+      className="duration-500 border-gray-700 border-[8px] w-[500px] h-[500px] absolute top-[calc(50%-250px)] -z-[1] left-[calc(50%-250px)] rounded-full blur-lg"
     ></motion.div>
   );
 };
