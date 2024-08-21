@@ -70,14 +70,14 @@
 
 body {
   cursor: none !important;
-  transition: color, background-color 250ms ease-in;
+  transition: color, background-color 300ms ease-in;
 }
 
 body * {
   cursor: none !important;
 }
 
-/* HOVER NO TITULO */
+/* * HOVER NO TITULO */
 .hover-title {
   background: linear-gradient(to right, transparent, transparent),
     linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)));
@@ -91,7 +91,7 @@ body * {
   background-size: 0 2px, 100% 2px;
 }
 
-/* HOVER NOS BOTOES DO INICIO*/
+/* * HOVER NOS BOTOES DO INICIO*/
 .btn-hover {
   overflow: hidden;
   position: relative;
@@ -123,7 +123,7 @@ body * {
   }
 }
 
-/* ANIMACAO TRAÇO CIRCULANDO EM LOOP */
+/* * ANIMACAO TRAÇO CIRCULANDO EM LOOP */
 
 ._border-loop::before {
   content: "";
@@ -150,7 +150,7 @@ body * {
   top: 2px;
   left: 2px;
   background-color: hsl(var(--background));
-  transition: color, background-color 250ms ease-in;
+  transition: color, background-color 200ms ease-in;
 }
 
 @keyframes rotate {
@@ -159,23 +159,26 @@ body * {
   }
 }
 
+/* * CUSTOM CURSOR */
+
 .cursor {
   position: absolute;
   pointer-events: none;
+  z-index: 99;
 }
+
 .cursor::after {
-  z-index: 50;
+  z-index: 99;
   content: "";
   width: 32px;
   height: 32px;
   position: absolute;
   border: 2px solid gray;
-  box-shadow: 0 0 8px gray;
-  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 5px 10px rgba(120, 120, 120, 0.3);
+  background-color: rgba(120, 120, 120, 0.3);
   border-radius: 50%;
-  opacity: 0.5;
-  top: -8px;
-  left: -8px;
+  top: -15px;
+  left: -15px;
 }
 
 @keyframes cursorAnim {
@@ -183,11 +186,10 @@ body * {
     transform: scale(1);
   }
   50% {
-    transform: scale(5);
+    transform: scale(3);
   }
   100% {
     transform: scale(1);
-    opacity: 0;
   }
 }
 .expand {

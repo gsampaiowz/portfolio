@@ -7,17 +7,19 @@ export default function Button({
   icon,
   additionalClass,
   link,
+  f,
 }: {
   text: string;
   icon?: React.ReactNode;
   additionalClass?: string;
   link?: string;
+  f?: () => void;
 }) {
   const router = useRouter();
 
   return (
     <button
-      onClick={() => link && router.push(link)}
+      onClick={link ? () => router.push(link) : f}
       className={cn(
         "text-background justify-center bg-primary rounded-md flex transition-all items-center gap-2 py-2 px-3 btn-hover hover:bg-primary/90",
         additionalClass

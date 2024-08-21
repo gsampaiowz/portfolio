@@ -60,20 +60,25 @@ export default function Home() {
             className="relative overflow-hidden p-[5px] rounded-lg"
             variants={item}
           >
-            <HomeTechs/>
+            <HomeTechs />
           </motion.li>
 
           <motion.li variants={item}>
             <div className="flex gap-8">
               <a download href="/cv.pdf">
-                <Button text="Download C.V" icon={<Download size={20} />} additionalClass="w-44" />
+                <Button
+                  text="Download C.V"
+                  icon={<Download size={20} />}
+                  additionalClass="w-44"
+                />
               </a>
-              <Button
-                text="Contact Me"
-                link="mailto:gabrielsampaio1216@gmail.com"
-                icon={<Mail size={20}/>}
-                additionalClass="w-44"
-              />
+              <a href="mailto:gabrielsampaio1216@gmail.com">
+                <Button
+                  text="Contact Me"
+                  icon={<Mail size={20} />}
+                  additionalClass="w-44"
+                />
+              </a>
               <Button
                 text="My Projects"
                 link="/projects"

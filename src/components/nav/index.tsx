@@ -76,7 +76,7 @@ export default function Nav({
               <Link
                 href={`/${tab.title !== "Home" ? tab.page : ""}`}
                 className={cn(
-                  "relative block font-medium duration-200",
+                  "relative block font-medium transition-[background] duration-300",
                   pathname.slice(1) === tab.page
                     ? "text-background delay-100"
                     : "text-primary hover:text-muted-foreground ",
