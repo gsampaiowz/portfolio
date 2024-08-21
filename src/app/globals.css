@@ -173,11 +173,11 @@ body * {
   width: 32px;
   height: 32px;
   position: absolute;
-  border: 2px solid gray;
-  box-shadow: 0 0 5px 10px rgba(120, 120, 120, 0.3);
-  background-color: rgba(120, 120, 120, 0.3);
+  border: 2px solid hsl(var(--primary));
+  box-shadow: 0 0 5px 5px hsl(var(--background));
   border-radius: 50%;
   top: -15px;
+  filter: brightness(1);
   left: -15px;
 }
 
@@ -186,7 +186,7 @@ body * {
     transform: scale(1);
   }
   50% {
-    transform: scale(3);
+    transform: scale(1.5);
   }
   100% {
     transform: scale(1);

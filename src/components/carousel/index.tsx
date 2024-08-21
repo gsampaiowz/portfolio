@@ -24,7 +24,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
     },
     {
       title: "Projeto 1",
@@ -32,7 +32,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
     },
     {
       title: "Projeto 1",
@@ -40,7 +40,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
     },
     {
       title: "Projeto 1",
@@ -48,7 +48,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
     },
     {
       title: "Projeto 1",
@@ -56,7 +56,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
     },
   ];
 
@@ -82,8 +82,6 @@ export default function Carousel() {
       return updatedIndexes;
     });
   };
-
-  const images = [logo, logo, logo, logo, logo];
 
   const positions = ["center", "left1", "left", "right", "right1"];
 

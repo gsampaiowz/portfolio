@@ -3,8 +3,10 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { FaRegMoon, FaSun } from "react-icons/fa";
 
+export const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 export default function ThemeSwitch() {
-    
+  
   const { setTheme, theme } = useTheme();
 
   const [isClient, setIsClient] = useState(false)

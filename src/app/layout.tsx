@@ -5,6 +5,7 @@ import ThemeProvider from "./../providers/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import CustomCursor from "@/components/customCursor";
+import { dark } from "@/components/themeSwitch";
 
 const mainFont = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href={dark ? "./../public/favicon-dark.ico"  : "./../public/favicon.ico"} />
       <body style={{ colorScheme: "dark" }} className={mainFont.className}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <CustomCursor />
