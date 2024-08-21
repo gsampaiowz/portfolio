@@ -3,7 +3,13 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { FaRegMoon, FaSun } from "react-icons/fa";
 
-export const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let darkVar;
+
+if (typeof window !== 'undefined') {
+darkVar = window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+export const dark = darkVar;
 
 export default function ThemeSwitch() {
   
