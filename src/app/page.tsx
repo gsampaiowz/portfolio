@@ -42,11 +42,11 @@ export default function Home() {
           animate="visible"
         >
           <motion.li className="flex flex-col items-center" variants={item}>
-            <h1 className="text-2xl text-center hover-title cursor-pointer pb-1">
+            <h1 className="text-2xl text-center hover-title  pb-1">
               Gabriel Sampaio
             </h1>
 
-            <h1 id="title" className="text-[64px] cursor-pointer leading-none">
+            <h1 id="title" className="text-[64px]  leading-none">
               Fullstack Developer
             </h1>
           </motion.li>
@@ -88,13 +88,13 @@ export default function Home() {
               <a target="_blank" href="https://www.linkedin.com/in/gsampaiowz/">
                 <FaLinkedin
                   size={50}
-                  className="cursor-pointer text-primary rounded-[4px] hover:text-background hover:bg-primary "
+                  className=" text-primary rounded-[4px] hover:text-background hover:bg-primary "
                 />
               </a>
               <a target="_blank" href="https://github.com/gsampaiowz">
                 <FaGithub
                   size={50}
-                  className="cursor-pointer text-primary rounded-full p-1 hover:text-background hover:bg-primary "
+                  className=" text-primary rounded-full p-1 hover:text-background hover:bg-primary "
                 />
               </a>
             </div>

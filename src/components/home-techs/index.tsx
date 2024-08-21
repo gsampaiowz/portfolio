@@ -9,7 +9,7 @@ export default function HomeTechs() {
         <TooltipTrigger>
           <div
             className={
-              "text-lg flex gap-4 p-4 [&>*]:cursor-pointer rounded-md _border-loop after:rounded-md"
+              "text-lg flex gap-4 p-4 [&>*]: rounded-md _border-loop after:rounded-md"
             }
           >
             <span onClick={() => window.open("https://react.dev")}>React</span>
@@ -37,7 +37,7 @@ export default function HomeTechs() {
             </span>
           </div>
         </TooltipTrigger>
-        <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:cursor-pointer">
+        <TooltipContent className="flex gap-4 p-4 mb-2 [&>*]:">
           <RiReactjsLine
             onClick={() => window.open("https://react.dev")}
             size={32}

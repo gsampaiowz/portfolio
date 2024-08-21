@@ -14,8 +14,6 @@ export default function Header() {
     },
   };
 
-  const pathname = usePathname();
-
   return (
     <motion.header
       transition={{ duration: 1 }}
@@ -25,7 +23,7 @@ export default function Header() {
       className="relative w-full h-20 max-w-3xl mx-auto"
     >
       <div className="w-full h-full flex justify-between items-center">
-        {/* <h1 className="text-3xl cursor-pointer leading-[50px] hover-title">
+        {/* <h1 className="text-3xl  leading-[50px] hover-title">
           Gabriel Sampaio
         </h1> */}
         <Image src={logo.src} width={40} height={40} alt="Logo escrito GS" />

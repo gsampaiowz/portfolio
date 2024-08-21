@@ -22,7 +22,7 @@ export default function ProjectCard({
 }: projectCardProps) {
   return (
     <div className="flex flex-col gap-2">
-      <div className="relative w-80 h-52 rounded-xl duration-300 cursor-pointer overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
+      <div className="relative w-80 h-52 rounded-xl duration-300  overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
         <Image
           src={img}
           className="w-full h-full object-cover duration-300 group-hover:scale-125"
