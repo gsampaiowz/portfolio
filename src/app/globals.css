@@ -68,9 +68,14 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   cursor: none !important;
   transition: color, background-color 300ms ease-in;
+  color-scheme: dark;
 }
 
 body * {

@@ -28,7 +28,10 @@ export default function ProjectCard({
       <div className="relative w-80 h-52 duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
         <Image
           src={img}
-          className="w-full h-full object-cover duration-300 group-hover:scale-125"
+          className={cn(
+            "w-full h-full object-cover duration-300 group-hover:scale-125",
+            focus ? "" : "opacity-75 brightness-50 blur-sm"
+          )}
           width={320}
           height={208}
           alt={`Projeto ${nome}`}
@@ -45,15 +48,18 @@ export default function ProjectCard({
       >
         <h1 className="text-xl">{nome}</h1>
         <p className="text-sm">{description}</p>
-        <div className="flex gap-2">{techs}</div>
-        <div className="flex justify-between [&>a]:text-background [&>a]:bg-primary [&>a]:rounded-lg [&>a]:flex [&>a]:transition-all [&>a]:items-center [&>a]:gap-2 [&>a]:py-2 [&>a]:px-3">
-          <Button
-            text="Ver Projeto"
-            icon={<FaArrowRight />}
-            link={link}
-            additionalClass="group hover:pr-6"
-          />
-          <Button text="Repositório" link={repo} icon={<BsGithub />} />
+        <div className="flex gap-2 [&>*]:size-8">{techs}</div>
+        <div className="flex justify-between">
+          <a href={link} target="_blank">
+            <Button
+              text="Ver Projeto"
+              icon={<FaArrowRight />}
+              additionalClass="group hover:pr-6"
+            />
+          </a>
+          <a target="_blank" href={repo}>
+            <Button text="Repositório" icon={<BsGithub />} />
+          </a>
         </div>
       </div>
     </div>

@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import ThemeSwitch from "./../themeSwitch/index";
 import Nav from "../nav";
-import logo from "@/app/favicon.ico"
-import Image from "next/image";
+import faviconDark from "@/app/favicon-dark.ico";
+import favicon from "@/app/favicon.ico";
 
 export default function Header() {
   const container = {
@@ -21,8 +21,9 @@ export default function Header() {
       animate="visible"
       className="relative w-full h-20 max-w-3xl mx-auto"
     >
+      <link rel="icon" href={!window.matchMedia('(prefers-color-scheme: dark)').matches ? faviconDark.src : favicon.src} />
       <div className="w-full h-full flex justify-between items-center">
-        <Image className="dark:" src={logo.src} width={40} height={40} alt="Logo escrito GS" />
+        <h1 className="text-3xl font-bold">GS</h1>
         <Nav />
         <ThemeSwitch />
       </div>

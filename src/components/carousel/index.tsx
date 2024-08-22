@@ -62,6 +62,14 @@ export default function Carousel() {
 
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
+  const handleClick = (clickedPositionIndex: number) => {
+    setPositionIndexes(prevIndexes => {
+      return prevIndexes.map((index, i) => 
+        (index - clickedPositionIndex + 5) % 5
+      );
+    });
+  };
+
   const handleNext = () => {
     setPositionIndexes((prevIndexes) => {
       const updatedIndexes = prevIndexes.map(
@@ -73,7 +81,7 @@ export default function Carousel() {
 
   const handleBack = () => {
     console.log("teste");
-    
+
     setPositionIndexes((prevIndexes) => {
       const updatedIndexes = prevIndexes.map(
         (prevIndex) => (prevIndex + 4) % 5
@@ -86,11 +94,11 @@ export default function Carousel() {
   const positions = ["center", "left1", "left", "right", "right1"];
 
   const imageVariants = {
-    center: { x: "0%", scale: 1, zIndex: 5 },
-    left1: { x: "-50%", scale: 0.7, zIndex: 3 },
-    left: { x: "-90%", scale: 0.5, zIndex: 2 },
+    center: { x: "0%", scale: 1, zIndex: 3 },
+    left1: { x: "-50%", scale: 0.7, zIndex: 2 },
+    left: { x: "-90%", scale: 0.5, zIndex: 1 },
     right: { x: "90%", scale: 0.5, zIndex: 1 },
-    right1: { x: "50%", scale: 0.7, zIndex: 3 },
+    right1: { x: "50%", scale: 0.7, zIndex: 2 },
   };
   return (
     <>
@@ -103,6 +111,7 @@ export default function Carousel() {
             animate={positions[positionIndexes[index]]}
             variants={imageVariants}
             transition={{ duration: 0.5 }}
+            onClick={() => handleClick(positionIndexes[index])}
             style={{ position: "absolute", top: 40 }}
           >
             <ProjectCard

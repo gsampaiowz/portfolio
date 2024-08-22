@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./../providers/theme-provider";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import CustomCursor from "@/components/customCursor";
-import { dark } from "@/components/themeSwitch";
+import dynamic from "next/dynamic";
 
 const mainFont = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -19,10 +18,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const Header = dynamic(() => import("@/components/header"), {
+    ssr: false,
+  });
+
   return (
     <html lang="en">
-      <link rel="icon" href={dark ? "./../public/favicon-dark.ico"  : "./../public/favicon.ico"} />
-      <body style={{ colorScheme: "dark" }} className={mainFont.className}>
+      <body className={mainFont.className}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <CustomCursor />
           <Header />
