@@ -24,7 +24,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
+      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
     },
     {
       title: "Projeto 1",
@@ -32,7 +32,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
+      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
     },
     {
       title: "Projeto 1",
@@ -40,7 +40,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
+      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
     },
     {
       title: "Projeto 1",
@@ -48,7 +48,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
+      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
     },
     {
       title: "Projeto 1",
@@ -56,20 +56,23 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={0} />],
+      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
     },
   ];
 
+  // * POSITIONS DO CAROUSEL
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
+  // TROCA DE SLIDE COM CLIQUE
   const handleClick = (clickedPositionIndex: number) => {
-    setPositionIndexes(prevIndexes => {
-      return prevIndexes.map((index, i) => 
-        (index - clickedPositionIndex + 5) % 5
+    setPositionIndexes((prevIndexes) => {
+      return prevIndexes.map(
+        (index, i) => (index - clickedPositionIndex + 5) % 5
       );
     });
   };
 
+  //PROXIMO SLIDE
   const handleNext = () => {
     setPositionIndexes((prevIndexes) => {
       const updatedIndexes = prevIndexes.map(
@@ -79,6 +82,7 @@ export default function Carousel() {
     });
   };
 
+  //SLIDE ANTERIOR
   const handleBack = () => {
     console.log("teste");
 
@@ -86,13 +90,14 @@ export default function Carousel() {
       const updatedIndexes = prevIndexes.map(
         (prevIndex) => (prevIndex + 4) % 5
       );
-
       return updatedIndexes;
     });
   };
 
+  //POSITION PARA ANIMACOES
   const positions = ["center", "left1", "left", "right", "right1"];
 
+  //ANIMACOES
   const imageVariants = {
     center: { x: "0%", scale: 1, zIndex: 3 },
     left1: { x: "-50%", scale: 0.7, zIndex: 2 },
@@ -101,8 +106,12 @@ export default function Carousel() {
     right1: { x: "50%", scale: 0.7, zIndex: 2 },
   };
   return (
-    <>
-      <div className="flex items-center justify-center mb-8">
+    <div className="flex flex-col w-full h-full">
+      <div className="flex flex-row gap-32 w-full h-full self-end items-end justify-center">
+        <Button additionalClass="px-8" text="Back" f={() => handleBack()} />
+        <Button additionalClass="px-8" text="Next" f={() => handleNext()} />
+      </div>
+      <div className="flex items-center justify-center relative h-[450px]">
         {items.map((item, index) => (
           <motion.div
             key={index}
@@ -112,7 +121,7 @@ export default function Carousel() {
             variants={imageVariants}
             transition={{ duration: 0.5 }}
             onClick={() => handleClick(positionIndexes[index])}
-            style={{ position: "absolute", top: 40 }}
+            style={{ position: "absolute" }}
           >
             <ProjectCard
               focus={positionIndexes[index] === 0}
@@ -126,10 +135,6 @@ export default function Carousel() {
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-row gap-8 w-full h-full self-end items-end justify-center">
-        <Button text="Back" f={() => handleBack()} />
-        <Button text="Next" f={() => handleNext()} />
-      </div>
-    </>
+    </div>
   );
 }

@@ -82,6 +82,11 @@ body * {
   cursor: none !important;
 }
 
+body *::selection{
+  background-color: hsl(var(--primary));
+  color: hsl(var(--background));
+}
+
 /* * HOVER NO TITULO */
 .hover-title {
   background: linear-gradient(to right, transparent, transparent),
@@ -155,7 +160,7 @@ body * {
   top: 2px;
   left: 2px;
   background-color: hsl(var(--background));
-  transition: color, background-color 200ms ease-in;
+  transition: color, background-color 300ms ease-in;
 }
 
 @keyframes rotate {

@@ -7,13 +7,15 @@ export default function Button({
   icon,
   additionalClass,
   link,
+  type,
   f,
 }: {
-  text: string;
+  text: string | React.ReactNode;
   icon?: React.ReactNode;
   additionalClass?: string;
   link?: string;
   f?: () => void;
+  type: "submit" | "reset";
 }) {
   const router = useRouter();
 

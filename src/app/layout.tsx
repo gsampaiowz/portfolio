@@ -24,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={mainFont.className}>
+      <body suppressHydrationWarning={true} suppressContentEditableWarning={true} className={mainFont.className}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <CustomCursor />
           <Header />

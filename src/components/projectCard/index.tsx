@@ -3,6 +3,8 @@ import { BsGithub } from "react-icons/bs";
 import Button from "../button";
 import { FaArrowRight } from "react-icons/fa";
 import { cn } from "@/lib/utils";
+import { CgArrowTopRight } from "react-icons/cg";
+import { cloneElement } from "react";
 
 type projectCardProps = {
   img: string;
@@ -27,6 +29,7 @@ export default function ProjectCard({
     <div className="flex flex-col gap-2 transition-[background] duration-300 ease-in bg-background p-6 rounded-xl">
       <div className="relative w-80 h-52 duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
         <Image
+        priority
           src={img}
           className={cn(
             "w-full h-full object-cover duration-300 group-hover:scale-125",
@@ -48,12 +51,12 @@ export default function ProjectCard({
       >
         <h1 className="text-xl">{nome}</h1>
         <p className="text-sm">{description}</p>
-        <div className="flex gap-2 [&>*]:size-8">{techs}</div>
+        <div className="flex gap-2 [&>*]:size-8">{techs.map((tech, index) => cloneElement(tech, { key: index }))}</div>
         <div className="flex justify-between">
           <a href={link} target="_blank">
             <Button
               text="Ver Projeto"
-              icon={<FaArrowRight />}
+              icon={<CgArrowTopRight size={20} />}
               additionalClass="group hover:pr-6"
             />
           </a>

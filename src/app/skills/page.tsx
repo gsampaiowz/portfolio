@@ -1,7 +1,7 @@
 import Container from "@/components/container";
 import { BsWordpress } from "react-icons/bs";
 import { DiReact } from "react-icons/di";
-import { FaNodeJs } from "react-icons/fa";
+import { FaNodeJs, FaPhp } from "react-icons/fa";
 import { FaNpm } from "react-icons/fa6";
 import { PiFramerLogoFill } from "react-icons/pi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -120,6 +120,10 @@ export default function Skills() {
         <div className="flex flex-col gap-2 text-center items-center justify-center">
           <SiExpo size={40} />
           <small>Expo</small>
+        </div>
+        <div className="flex flex-col gap-2 text-center items-center justify-center">
+          <FaPhp size={40} />
+          <small>PHP</small>
         </div>
       </div>
     </Container>
