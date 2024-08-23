@@ -15,6 +15,7 @@ import {
 import Button from "@/components/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { sendContactForm } from "@/lib/api";
 
 const formSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -34,10 +35,7 @@ export default function Contact() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    try {
-    } catch (error) {
-      console.log(error);
-    }
+    await sendContactForm(values);
   }
 
   return (
