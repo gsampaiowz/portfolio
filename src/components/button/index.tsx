@@ -15,7 +15,7 @@ export default function Button({
   additionalClass?: string;
   link?: string;
   f?: () => void;
-  type: "submit" | "reset";
+  type?: "submit" | "reset";
 }) {
   const router = useRouter();
 

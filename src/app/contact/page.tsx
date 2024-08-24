@@ -15,12 +15,12 @@ import {
 import Button from "@/components/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { sendContactForm } from "@/lib/api";
+import { send } from "@/lib/mail";
 
 const formSchema = z.object({
-    name: z.string().min(1, "Name is required"),
-    email: z.string().min(1, "Email is required").max(254, "254 characters max"),
-    message: z.string().min(1, "Message is required"),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().min(1, "Email is required").max(254, "254 characters max"),
+  message: z.string().min(1, "Message is required"),
 });
 
 export default function Contact() {
@@ -35,7 +35,8 @@ export default function Contact() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    await sendContactForm(values);
+
+    send(values);
   }
 
   return (
@@ -68,23 +69,23 @@ export default function Contact() {
               </FormItem>
             )}
           />
-           <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="your message"
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="your message"
+                    className="resize-none"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <Button type="submit" text="Submit" />
         </form>
       </Form>

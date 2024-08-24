@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "@/app/favicon.ico";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -14,7 +14,7 @@ export default function Carousel() {
     img: string;
     link: string;
     repo: string;
-    techs: React.ReactElement[];
+    techs: React.ReactNode[];
   };
 
   const items: ProjectProps[] = [
@@ -24,7 +24,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
     },
     {
       title: "Projeto 1",
@@ -32,7 +32,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
     },
     {
       title: "Projeto 1",
@@ -40,7 +40,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
     },
     {
       title: "Projeto 1",
@@ -48,7 +48,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
     },
     {
       title: "Projeto 1",
@@ -56,7 +56,7 @@ export default function Carousel() {
       img: "https://picsum.photos/200/300",
       link: "https://github.com/gsampaiowz",
       repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill />, <RiTailwindCssFill />],
+      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
     },
   ];
 
