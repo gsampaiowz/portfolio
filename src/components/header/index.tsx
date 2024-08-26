@@ -15,11 +15,11 @@ export default function Header() {
 
   return (
     <motion.header
-      transition={{ duration: 1 }}
+    transition={{ duration: 1 }}
       variants={container}
       initial="hidden"
       animate="visible"
-      className="relative w-full h-20 max-w-3xl mx-auto"
+      className="relative w-full h-20 max-w-3xl mx-auto px-6"
     >
       <link rel="icon" href={!window.matchMedia('(prefers-color-scheme: dark)').matches ? faviconDark.src : favicon.src} />
       <div className="w-full h-full flex justify-between items-center">

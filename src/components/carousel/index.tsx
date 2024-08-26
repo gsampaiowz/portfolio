@@ -2,63 +2,11 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "@/app/favicon.ico";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import ProjectCard from "../projectCard";
 import Button from "../button";
+import ProjectsList from "@/data/projects-list";
 
 export default function Carousel() {
-  type ProjectProps = {
-    title: string;
-    description: string;
-    img: string;
-    link: string;
-    repo: string;
-    techs: React.ReactNode[];
-  };
-
-  const items: ProjectProps[] = [
-    {
-      title: "Projeto 1",
-      description: "Descricão do projeto",
-      img: "https://picsum.photos/200/300",
-      link: "https://github.com/gsampaiowz",
-      repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
-    },
-    {
-      title: "Projeto 1",
-      description: "Descricão do projeto",
-      img: "https://picsum.photos/200/300",
-      link: "https://github.com/gsampaiowz",
-      repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
-    },
-    {
-      title: "Projeto 1",
-      description: "Descricão do projeto",
-      img: "https://picsum.photos/200/300",
-      link: "https://github.com/gsampaiowz",
-      repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
-    },
-    {
-      title: "Projeto 1",
-      description: "Descricão do projeto",
-      img: "https://picsum.photos/200/300",
-      link: "https://github.com/gsampaiowz",
-      repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
-    },
-    {
-      title: "Projeto 1",
-      description: "Descricão do projeto",
-      img: "https://picsum.photos/200/300",
-      link: "https://github.com/gsampaiowz",
-      repo: "https://github.com/gsampaiowz",
-      techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
-    },
-  ];
 
   // * POSITIONS DO CAROUSEL
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
@@ -112,7 +60,7 @@ export default function Carousel() {
         <Button additionalClass="px-8" text="Next" f={() => handleNext()} />
       </div>
       <div className="flex items-center justify-center relative h-[450px]">
-        {items.map((item, index) => (
+        {ProjectsList.map((item, index) => (
           <motion.div
             key={index}
             className="rounded-[12px]"

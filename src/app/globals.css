@@ -57,6 +57,10 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+  .light{
+    
+  }
 }
 
 @layer base {
@@ -68,29 +72,38 @@
   }
 }
 
-html{
+/* *PADROES */
+
+html {
   scroll-behavior: smooth;
+  cursor: none !important;
 }
 
 body {
-  cursor: none !important;
   transition: color, background-color 300ms ease-in;
   color-scheme: dark;
+  cursor: none !important;
 }
 
 body * {
   cursor: none !important;
 }
 
-body *::selection{
+body *::selection {
   background-color: hsl(var(--primary));
   color: hsl(var(--background));
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 /* * HOVER NO TITULO */
 .hover-title {
   background: linear-gradient(to right, transparent, transparent),
-    linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)));
+  linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)));
   background-size: 100% 2px, 0 2px;
   background-position: 100% 100%, 50% 100%;
   background-repeat: no-repeat;

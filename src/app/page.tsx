@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "@/components/button";
 import { BriefcaseBusiness, Download, Mail } from "lucide-react";
-import HomeTechs from "@/components/home-techs";
+import HomeTechs from "@/components/homeTechs";
 
 // ? PAGINA INICIAL
 
@@ -41,12 +41,15 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <motion.li className="flex flex-col items-center gap-2" variants={item}>
+          <motion.li
+            className="flex flex-col items-center gap-2"
+            variants={item}
+          >
             <h1 className="text-2xl text-center hover-title  pb-1">
               Gabriel Sampaio
             </h1>
 
-            <h1 id="title" className="text-[64px] leading-none">
+            <h1 className="text-[64px] text-center leading-none">
               Fullstack Developer
             </h1>
           </motion.li>

@@ -15,13 +15,13 @@ export default function ThemeSwitch() {
 
   return !isClient ? null : theme == "dark" ? (
     <FaRegMoon
-    className="hover:size-6 size-5  duration-500"
+    className="hover:opacity-50 size-5  duration-500"
       onClick={() => setTheme("light")}
       color="white"
     />
   ) : (
     <FaSun
-    className="hover:size-6 size-5  text-primary duration-500"
+    className="hover:opacity-50 size-5  text-primary duration-500"
       onClick={() => setTheme("dark")}
     />
   );

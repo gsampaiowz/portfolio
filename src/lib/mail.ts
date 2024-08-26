@@ -51,7 +51,6 @@ async function sendEmail({
     const sendResult = await transport.sendMail({
       to,
       subject,
-      text: body,
       html: body,
     });
     console.log(sendResult);
@@ -61,15 +60,42 @@ async function sendEmail({
 }
 
 type emailProps = {
-    name: string;
-    email: string;
-    message: string;
-}
-
+  name: string;
+  email: string;
+  message: string;
+};
 export const send = async (values: emailProps) => {
   await sendEmail({
     to: "gabrielsampaio1216@gmail.com",
-    subject: "Portfolio, " + values.name,
-    body: `Mensagem de ${values.name} do email: (${values.email}): \n ${values.message}`,
+    subject: `Portfolio - Message from ${values.name}`,
+    body: `
+        <html>
+          <head>
+            <style>
+              body {
+                background-color: #0c0a09;
+                font-family: Arial, sans-serif;
+              }
+              .container {
+                max-width: 600px;
+                margin: 40px auto;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <h2>Portfolio - Message from ${values.name}</h2>
+              <span>Nome: <strong>${values.name}</strong></span>
+              <p>Email: ${values.email}</p>
+              <p>Mensagem: <br> <br> ${values.message}</p>
+            </div>
+          </body>
+        </html>
+      `,
   });
 };
