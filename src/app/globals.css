@@ -58,8 +58,7 @@
     --chart-5: 340 75% 55%;
   }
 
-  .light{
-    
+  .light {
   }
 }
 
@@ -77,6 +76,23 @@
 html {
   scroll-behavior: smooth;
   cursor: none !important;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 5px;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 14px;
 }
 
 body {
@@ -103,7 +119,7 @@ body *::selection {
 /* * HOVER NO TITULO */
 .hover-title {
   background: linear-gradient(to right, transparent, transparent),
-  linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)));
+    linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)));
   background-size: 100% 2px, 0 2px;
   background-position: 100% 100%, 50% 100%;
   background-repeat: no-repeat;

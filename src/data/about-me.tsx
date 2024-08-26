@@ -5,7 +5,7 @@ const aboutMe = [
   },
   {
     label: "Idade",
-    value: "19 anos",
+    value: new Date().getFullYear() - 2005 + " anos",
   },
   {
     label: "Cursando",
