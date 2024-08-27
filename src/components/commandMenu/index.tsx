@@ -39,18 +39,18 @@ export function CommandMenu({
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Pages">
           {internalLinks.map((tab) => (
-            <CommandItem key={tab.title}>
-              <Link
-                href={tab.page}
-                onClick={() => {
-                  setOpen(false);
-                }}
-                className={"items-center flex gap-2"}
-              >
+            <Link
+              href={tab.page}
+              onClick={() => {
+                setOpen(false);
+              }}
+              className={"items-center flex gap-2"}
+            >
+              <CommandItem key={tab.title}>
                 <CgFileDocument />
                 {tab.title}
-              </Link>
-            </CommandItem>
+              </CommandItem>
+            </Link>
           ))}
         </CommandGroup>
         <CommandGroup heading="Options">
@@ -73,16 +73,18 @@ export function CommandMenu({
         </CommandGroup>
         <CommandGroup heading="Social">
           {socialMedias.map((item, index) => (
-            <CommandItem onClick={() => window.open(item.url)} key={index}>
-              <item.icon size={30} /> {item.label}
-            </CommandItem>
+            <a href={item.url}>
+              <CommandItem key={index}>
+                <item.icon size={30} /> {item.label}
+              </CommandItem>
+            </a>
           ))}
-          <CommandItem
-            onClick={() => window.open("mailto:gabrielsampaio1216@gmail.com")}
-          >
-            <Mail />
-            E-mail
-          </CommandItem>
+          <a href="mailto:gabrielsampaio1216@gmail.com">
+            <CommandItem>
+              <Mail />
+              E-mail
+            </CommandItem>
+          </a>
         </CommandGroup>
       </CommandList>
     </CommandDialog>
