@@ -13,6 +13,9 @@ import { CgFileDocument } from "react-icons/cg";
 import { TbLanguage } from "react-icons/tb";
 import { Mail, MoonIcon, SunIcon } from "lucide-react";
 import socialMedias from "@/data/social-medias";
+import { useTheme } from "next-themes";
+import { DialogTitle } from "../ui/dialog";
+import { DialogDescription } from "@radix-ui/react-dialog";
 
 export function CommandMenu({
   open,
@@ -32,8 +35,12 @@ export function CommandMenu({
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  const { setTheme } = useTheme();
+
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
+      <DialogTitle />
+      <DialogDescription />
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
@@ -47,7 +54,7 @@ export function CommandMenu({
               }}
               className={"items-center flex gap-2"}
             >
-              <CommandItem className="w-full">
+              <CommandItem>
                 <CgFileDocument />
                 {tab.title}
               </CommandItem>
@@ -63,29 +70,27 @@ export function CommandMenu({
             <TbLanguage />
             English
           </CommandItem>
-          <CommandItem>
+          <CommandItem onClick={() => setTheme("dark")}>
             <MoonIcon />
             Dark Theme
           </CommandItem>
-          <CommandItem>
+          <CommandItem onClick={() => setTheme("light")}>
             <SunIcon />
             Light Theme
           </CommandItem>
         </CommandGroup>
         <CommandGroup heading="Social">
           {socialMedias.map((item, index) => (
-            <a key={index} target="_blank" href={item.url}>
-              <CommandItem>
-                <item.icon size={30} /> {item.label}
-              </CommandItem>
-            </a>
-          ))}
-          <a target="_blank" href="mailto:gabrielsampaio1216@gmail.com">
-            <CommandItem>
-              <Mail />
-              E-mail
+            <CommandItem key={index} onClick={() => window.open(item.url)}>
+              <item.icon size={30} /> {item.label}
             </CommandItem>
-          </a>
+          ))}
+          <CommandItem
+            onClick={() => window.open("mailto:gabrielsampaio1216@gmail.com")}
+          >
+            <Mail />
+            E-mail
+          </CommandItem>
         </CommandGroup>
       </CommandList>
     </CommandDialog>

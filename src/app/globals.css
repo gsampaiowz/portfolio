@@ -95,6 +95,10 @@ html {
   border-radius: 14px;
 }
 
+*::-webkit-scrollbar-corner {
+  background-color: hsl(var(--background));
+}
+
 body {
   transition: color, background-color 300ms ease-in;
   color-scheme: dark;
