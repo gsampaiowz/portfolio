@@ -40,13 +40,14 @@ export function CommandMenu({
         <CommandGroup heading="Pages">
           {internalLinks.map((tab) => (
             <Link
+              key={tab.title}
               href={tab.page}
               onClick={() => {
                 setOpen(false);
               }}
               className={"items-center flex gap-2"}
             >
-              <CommandItem key={tab.title}>
+              <CommandItem>
                 <CgFileDocument />
                 {tab.title}
               </CommandItem>
@@ -73,8 +74,8 @@ export function CommandMenu({
         </CommandGroup>
         <CommandGroup heading="Social">
           {socialMedias.map((item, index) => (
-            <a href={item.url}>
-              <CommandItem key={index}>
+            <a key={index} href={item.url}>
+              <CommandItem>
                 <item.icon size={30} /> {item.label}
               </CommandItem>
             </a>
