@@ -73,15 +73,15 @@ export function CommandMenu({
         </CommandGroup>
         <CommandGroup heading="Social">
           {socialMedias.map((item, index) => (
-            <CommandItem key={index}>
-              <item.icon onClick={() => window.open(item.url)} size={30} />{" "}
-              {item.label}
+            <CommandItem onClick={() => window.open(item.url)} key={index}>
+              <item.icon size={30} /> {item.label}
             </CommandItem>
           ))}
-          <CommandItem>
-            <Mail /> <a href="mailto:gabrielsampaio1216@gmail.com">
-              E-mail
-              </a>
+          <CommandItem
+            onClick={() => window.open("mailto:gabrielsampaio1216@gmail.com")}
+          >
+            <Mail />
+            E-mail
           </CommandItem>
         </CommandGroup>
       </CommandList>
