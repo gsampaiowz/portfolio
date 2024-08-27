@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   CommandDialog,
   CommandEmpty,
@@ -10,6 +10,9 @@ import {
 import internalLinks from "@/data/internal-links";
 import Link from "next/link";
 import { CgFileDocument } from "react-icons/cg";
+import { TbLanguage } from "react-icons/tb";
+import { Mail, MoonIcon, SunIcon } from "lucide-react";
+import socialMedias from "@/data/social-medias";
 
 export function CommandMenu({
   open,
@@ -42,15 +45,44 @@ export function CommandMenu({
                 onClick={() => {
                   setOpen(false);
                 }}
-                className={
-                  "p-2 hover:bg-border items-center flex gap-2 rounded-md"
-                }
+                className={"items-center flex gap-2"}
               >
                 <CgFileDocument />
                 {tab.title}
               </Link>
             </CommandItem>
           ))}
+        </CommandGroup>
+        <CommandGroup heading="Options">
+          <CommandItem>
+            <TbLanguage />
+            Portuguese
+          </CommandItem>
+          <CommandItem>
+            <TbLanguage />
+            English
+          </CommandItem>
+          <CommandItem>
+            <MoonIcon />
+            Dark Theme
+          </CommandItem>
+          <CommandItem>
+            <SunIcon />
+            Light Theme
+          </CommandItem>
+        </CommandGroup>
+        <CommandGroup heading="Social">
+          {socialMedias.map((item, index) => (
+            <CommandItem key={index}>
+              <item.icon onClick={() => window.open(item.url)} size={30} />{" "}
+              {item.label}
+            </CommandItem>
+          ))}
+          <CommandItem>
+            <Mail /> <a href="mailto:gabrielsampaio1216@gmail.com">
+              E-mail
+              </a>
+          </CommandItem>
         </CommandGroup>
       </CommandList>
     </CommandDialog>

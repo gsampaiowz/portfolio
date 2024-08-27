@@ -96,13 +96,13 @@ export default function Home() {
               <a target="_blank" href="https://www.linkedin.com/in/gsampaiowz/">
                 <FaLinkedin
                   size={50}
-                  className="duration-300 text-primary rounded-[4px] hover:text-background hover:bg-primary "
+                  className="duration-300 text-primary rounded-[4px] hover:opacity-50 "
                 />
               </a>
               <a target="_blank" href="https://github.com/gsampaiowz">
                 <FaGithub
                   size={50}
-                  className="duration-300 text-primary rounded-full p-1 hover:text-background hover:bg-primary "
+                  className="duration-300 text-primary rounded-full p-1 hover:opacity-50 "
                 />
               </a>
             </div>

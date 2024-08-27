@@ -16,9 +16,7 @@ import Button from "@/components/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { send } from "@/lib/mail";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaGithub, FaHackerrank, FaInstagram, FaLinkedin, FaMediumM, FaStackOverflow } from "react-icons/fa";
-import { PiDevToLogoFill } from "react-icons/pi";
+import socialMedias from "@/data/social-medias";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -37,8 +35,6 @@ export default function Contact() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-
     send(values);
   }
 
@@ -94,14 +90,9 @@ export default function Contact() {
       </Form>
 
       <div className="flex gap-6 [&>*:hover]:opacity-50 [&>*]:duration-300">
-        <FaLinkedin onClick={() => window.open("https://www.linkedin.com/in/gsampaiowz/")} size={30}/>
-        <FaGithub onClick={() => window.open("https://github.com/gsampaiowz")} size={30}/>
-        <FaInstagram onClick={() => window.open("https://www.instagram.com/gsampaiowz/")} size={30}/>
-        {/* <FaXTwitter size={30}/> */}
-        <FaStackOverflow onClick={() => window.open("https://stackoverflow.com/users/21460112/gsampaiowz")} size={30}/>
-        <FaMediumM onClick={() => window.open("https://medium.com/@gsampaiowz")} size={30}/>
-        <PiDevToLogoFill onClick={() => window.open("https://pidev.to/gsampaiowz")} size={30}/>
-        <FaHackerrank size={30}/>
+        {socialMedias.map((item) => (
+          <item.icon onClick={() => window.open(item.url)} size={30}/>
+        ))}
       </div>
     </Container>
   );
