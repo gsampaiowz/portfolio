@@ -41,7 +41,10 @@ export default function Contact() {
   return (
     <Container className="justify-center items-center gap-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 w-full"
+        >
           <FormField
             control={form.control}
             name="name"
@@ -90,8 +93,12 @@ export default function Contact() {
       </Form>
 
       <div className="flex gap-6 [&>*:hover]:opacity-50 [&>*]:duration-300">
-        {socialMedias.map((item) => (
-          <item.icon onClick={() => window.open(item.url)} size={30}/>
+        {socialMedias.map((item, index) => (
+          <item.icon
+            key={index}
+            onClick={() => window.open(item.url)}
+            size={30}
+          />
         ))}
       </div>
     </Container>
