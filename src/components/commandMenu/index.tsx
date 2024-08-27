@@ -47,7 +47,7 @@ export function CommandMenu({
               }}
               className={"items-center flex gap-2"}
             >
-              <CommandItem>
+              <CommandItem className="w-full">
                 <CgFileDocument />
                 {tab.title}
               </CommandItem>
@@ -74,13 +74,13 @@ export function CommandMenu({
         </CommandGroup>
         <CommandGroup heading="Social">
           {socialMedias.map((item, index) => (
-            <a key={index} href={item.url}>
+            <a key={index} target="_blank" href={item.url}>
               <CommandItem>
                 <item.icon size={30} /> {item.label}
               </CommandItem>
             </a>
           ))}
-          <a href="mailto:gabrielsampaio1216@gmail.com">
+          <a target="_blank" href="mailto:gabrielsampaio1216@gmail.com">
             <CommandItem>
               <Mail />
               E-mail
