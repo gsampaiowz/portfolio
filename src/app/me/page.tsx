@@ -18,8 +18,9 @@ export default function Me() {
       <div className="flex flex-col gap-2">
         {aboutMe.map((item, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-col gap-2">
-              <p>
+            <div className="flex gap-2 [&>*]:min-w-5">
+              {item.icon}
+              <p className="w-full">
                 {item.label}: {item.value}
               </p>
             </div>

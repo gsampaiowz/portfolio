@@ -9,23 +9,39 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Button from "../button";
-import { CgMenu } from "react-icons/cg";
+import { CgClose, CgMenu } from "react-icons/cg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Nav from "../nav";
 
 export default function MobileMenu() {
   return (
     <Drawer>
       <DrawerTrigger>
-        <CgMenu className="duration-300 hover:opacity-50" size={25}/>
+        <CgMenu className="duration-300 hover:opacity-50" size={25} />
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-          <DrawerDescription>This action cannot be undone.</DrawerDescription>
-        </DrawerHeader>
-        <DrawerFooter>
+        <DrawerHeader className="justify-between items-center flex flex-row">
+          <DrawerTitle className="font-normal">Navigation</DrawerTitle>
+          <DrawerDescription />
           <DrawerClose>
-            <Button text="Cancel" />
+            <CgClose className="duration-300 hover:opacity-50" size={25} />
           </DrawerClose>
+        </DrawerHeader>
+
+        <Nav/>
+        <DrawerFooter className="flex-row justify-center">
+          <FaLinkedin
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/gsampaiowz/")
+            }
+            size={40}
+            className="duration-300 text-primary bg-muted py-1 flex-1 rounded-md hover:opacity-50 "
+          />
+          <FaGithub
+            onClick={() => window.open("https://github.com/gsampaiowz")}
+            size={40}
+            className="duration-300 text-primary bg-muted py-1 flex-1 rounded-md hover:opacity-50 "
+          />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import Button from "../button";
-import { FaArrowRight } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { CgArrowTopRight } from "react-icons/cg";
-import React, { cloneElement } from "react";
+import React from "react";
 
 type projectCardProps = {
   img: string;

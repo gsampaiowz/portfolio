@@ -93,18 +93,16 @@ export default function Home() {
 
           <motion.li variants={item}>
             <div className="flex gap-8">
-              <a target="_blank" href="https://www.linkedin.com/in/gsampaiowz/">
                 <FaLinkedin
+                onClick={() => window.open("https://www.linkedin.com/in/gsampaiowz/")}
                   size={50}
                   className="duration-300 text-primary rounded-[4px] hover:opacity-50 "
                 />
-              </a>
-              <a target="_blank" href="https://github.com/gsampaiowz">
                 <FaGithub
+                onClick={() => window.open("https://github.com/gsampaiowz")}
                   size={50}
                   className="duration-300 text-primary rounded-full p-1 hover:opacity-50 "
                 />
-              </a>
             </div>
           </motion.li>
         </motion.ul>
