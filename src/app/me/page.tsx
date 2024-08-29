@@ -12,7 +12,7 @@ export default function Me() {
         quality={100}
         height={250}
         src={perfil.src}
-        className="aspect-square object-cover rounded-full border-primary border-2"
+        className="aspect-square grayscale-[75%] object-cover rounded-full border-primary border-2"
         alt="Foto Perfil Gabriel Sampaio"
       />
       <div className="flex flex-col gap-2">
