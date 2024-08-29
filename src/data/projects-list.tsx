@@ -11,18 +11,18 @@ type ProjectProps = {
 
 const ProjectsList: ProjectProps[] = [
   {
-    title: "Projeto 1",
-    description: "Descricão do projeto",
+    title: "Event +",
+    description: "Site de cadastro de eventos",
     img: "https://picsum.photos/200/300",
-    link: "https://github.com/gsampaiowz",
+    link: "https://eventplus-sampaio.vercel.app/",
     repo: "https://github.com/gsampaiowz",
     techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
   },
   {
-    title: "Projeto 1",
-    description: "Descricão do projeto",
+    title: "Simon Says",
+    description: "Site com postagens da Simon Says",
     img: "https://picsum.photos/200/300",
-    link: "https://github.com/gsampaiowz",
+    link: "https://simon-says-mu.vercel.app/",
     repo: "https://github.com/gsampaiowz",
     techs: [<RiNextjsFill key={0} />, <RiTailwindCssFill key={1} />],
   },

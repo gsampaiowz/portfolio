@@ -28,7 +28,7 @@ export default function Footer() {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="w-full mt-8 pb-4 max-w-3xl mx-auto px-6"
+      className="w-full py-4 max-w-3xl mx-auto px-6"
     >
       <div className="w-full h-full flex justify-between items-center [&>*]:duration-300">
         <div className="w-20 h-6 flex">

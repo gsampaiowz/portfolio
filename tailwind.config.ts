@@ -12,6 +12,7 @@ const config = {
   theme: {
     screens: {
     md: { max: "768px" },
+    xs: { max: "576px" },
     },
     extend: {
       colors: {

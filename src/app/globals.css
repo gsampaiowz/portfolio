@@ -103,6 +103,7 @@ body {
   transition: color, background-color 300ms ease-in;
   color-scheme: dark;
   cursor: none !important;
+  overflow-x: hidden;
 }
 
 body * {
@@ -114,7 +115,7 @@ body *::selection {
   color: hsl(var(--background));
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   body {
     overflow: hidden;
   }

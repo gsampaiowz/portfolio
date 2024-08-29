@@ -8,14 +8,16 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import Button from "../button";
 import { CgClose, CgMenu } from "react-icons/cg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Nav from "../nav";
+import { useState } from "react";
 
 export default function MobileMenu() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger>
         <CgMenu className="duration-300 hover:opacity-50" size={25} />
       </DrawerTrigger>
@@ -27,8 +29,9 @@ export default function MobileMenu() {
             <CgClose className="duration-300 hover:opacity-50" size={25} />
           </DrawerClose>
         </DrawerHeader>
-
-        <Nav/>
+        <div onClick={() => setOpen(false)}>
+          <Nav />
+        </div>
         <DrawerFooter className="flex-row justify-center">
           <FaLinkedin
             onClick={() =>

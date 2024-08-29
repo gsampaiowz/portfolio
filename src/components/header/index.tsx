@@ -32,8 +32,8 @@ export default function Header() {
       />
       <div className="w-full h-full flex md:hidden justify-between items-center">
         <h1 className="text-3xl font-bold">GS</h1>
-          <Nav />
-          <ThemeSwitch />
+        <Nav />
+        <ThemeSwitch />
       </div>
       <div className="w-full h-full hidden md:flex justify-between items-center">
         <h1 className="text-3xl font-bold">GS</h1>

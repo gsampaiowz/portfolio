@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import Button from "../button";
 import { cn } from "@/lib/utils";
@@ -6,8 +5,8 @@ import { CgArrowTopRight } from "react-icons/cg";
 import React from "react";
 
 type projectCardProps = {
-  img: string;
   nome: string;
+  canvasDataURL: string;
   link: string;
   repo: string;
   description: string;
@@ -17,7 +16,7 @@ type projectCardProps = {
 
 export default function ProjectCard({
   nome,
-  img,
+  canvasDataURL,
   link,
   repo,
   description,
@@ -26,18 +25,8 @@ export default function ProjectCard({
 }: projectCardProps) {
   return (
     <div className="flex flex-col gap-2 transition-[background] duration-300 ease-in bg-background p-6 rounded-xl">
-      <div className="relative w-80 h-52 duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
-        <Image
-          priority
-          src={img}
-          className={cn(
-            "w-full h-full object-cover duration-300 group-hover:scale-125",
-            focus ? "" : "opacity-75 brightness-50 blur-sm"
-          )}
-          width={320}
-          height={208}
-          alt={`Projeto ${nome}`}
-        />
+      <div className="relative w-80 xs:w-64 aspect-video duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
+        <img src={canvasDataURL} alt={nome} />
       </div>
 
       <div
@@ -55,17 +44,18 @@ export default function ProjectCard({
             <React.Fragment key={index}>{TechIcon}</React.Fragment>
           ))}
         </div>
-        <div className="flex justify-between">
-          <a href={link} target="_blank">
-            <Button
-              text="Ver Projeto"
-              icon={<CgArrowTopRight size={20} />}
-              additionalClass="group hover:pr-6"
-            />
-          </a>
-          <a target="_blank" href={repo}>
-            <Button text="Repositório" icon={<BsGithub />} />
-          </a>
+        <div className="flex xs:flex-col gap-4 justify-between">
+          <Button
+            f={() => window.open(link, "_blank")}
+            text="Ver Projeto"
+            icon={<CgArrowTopRight size={20} />}
+            additionalClass="group hover:pr-6"
+          />
+          <Button
+            f={() => window.open(repo, "_blank")}
+            text="Repositório"
+            icon={<BsGithub />}
+          />
         </div>
       </div>
     </div>
