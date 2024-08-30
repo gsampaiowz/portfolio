@@ -27,7 +27,7 @@ export default function ProjectCard({
 }: projectCardProps) {
   return (
     <div className="flex flex-col gap-2 transition-[background, size] duration-300 ease-in w-96 xs:w-72 bg-background p-2 rounded-xl">
-      <div onClick={() => focus && window.open(link, "_blank")} className="relative aspect-video duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group">
+      <div onClick={() => focus && window.open(link, "_blank")} className={cn("relative aspect-video duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group", focus && "border-2 border-border ring-2 ring-ring")}>
         <Image
           priority
           src={img}
@@ -35,8 +35,9 @@ export default function ProjectCard({
             "w-full h-full object-cover duration-300 group-hover:scale-125",
             focus ? "" : "opacity-75 brightness-50 blur-sm grayscale-[75%]"
           )}
-          width={320}
-          height={208}
+          width={1280}
+          height={720}
+          quality={100}
           alt={`Projeto ${nome}`}
         />
       </div>
@@ -56,7 +57,7 @@ export default function ProjectCard({
             <TechIcon className="rounded-md" key={index} />
           ))}
         </div>
-        <div className="flex xs:flex-col gap-4 justify-between">
+        <div className="flex xs:flex-col gap-4 mt-1 justify-between">
           <Button
             f={() => window.open(link, "_blank")}
             text="Ver Projeto"
