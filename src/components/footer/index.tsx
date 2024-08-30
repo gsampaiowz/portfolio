@@ -44,7 +44,7 @@ export default function Footer() {
             </span>
           </span>
         </div>
-        <small className="text-sm">© 2024 Gabriel Sampaio</small>
+        <small className="text-sm">© 2024 Sampaio</small>
 
         <div className="w-20 flex justify-end rounded-lg">
           <LangSwitcher />

@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../projectCard";
 import Button from "../button";
 import ProjectsList from "@/data/projects-list";
-import { generateCanvasDataURL } from "@/lib/canva";
 
 export default function Carousel() {
   // * POSITIONS DO CAROUSEL
@@ -48,47 +47,11 @@ export default function Carousel() {
   //ANIMACOES
   const imageVariants = {
     center: { x: "0%", scale: 1, zIndex: 3 },
-    left1: { x: "-50%", scale: 0.7, zIndex: 2 },
-    left: { x: "-90%", scale: 0.5, zIndex: 1 },
-    right: { x: "90%", scale: 0.5, zIndex: 1 },
-    right1: { x: "50%", scale: 0.7, zIndex: 2 },
+    left1: { y: "-5%", x: "-50%", scale: 0.7, zIndex: 2 },
+    left: { y: "-8%",x: "-90%", scale: 0.5, zIndex: 1 },
+    right: { y: "-8%",x: "90%", scale: 0.5, zIndex: 1 },
+    right1: { y: "-5%",x: "50%", scale: 0.7, zIndex: 2 },
   };
-
-  const [canvasDataUrls, setCanvasDataUrls] = useState<Record<string, string>>(
-    {}
-  );
-
-  useEffect(() => {
-    const generateCanvasDataUrls = async () => {
-      const urlsToGenerate = ProjectsList.filter(
-        (project) => !canvasDataUrls[project.link]
-      ).map((project) => project.link);
-
-      const processUrl = async (url: string, index: number) => {
-        try {
-          const newUrl = await generateCanvasDataURL(url);
-          setCanvasDataUrls((prevState) => {
-            const newState = { ...prevState };
-            newState[url] = newUrl;
-            return newState;
-          });
-          console.log(`URL ${index + 1}/${urlsToGenerate.length} gerada`);
-        } catch (error) {
-          console.error(`Erro ao gerar URL ${index + 1}:`, error);
-        }
-      };
-
-      const processUrlsSequentially = async () => {
-        for (let i = 0; i < urlsToGenerate.length; i++) {
-          await processUrl(urlsToGenerate[i], i);
-        }
-      };
-
-      await processUrlsSequentially();
-    };
-
-    generateCanvasDataUrls();
-  }, [ProjectsList]);
 
   return (
     <div className="flex flex-col w-full h-max">
@@ -111,8 +74,8 @@ export default function Carousel() {
             <ProjectCard
               focus={positionIndexes[index] === 0}
               nome={item.title}
-              canvasDataURL={canvasDataUrls[item.link]}
               link={item.link}
+              img={item.img}
               repo={item.repo}
               description={item.description}
               techs={item.techs}
