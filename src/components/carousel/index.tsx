@@ -6,11 +6,10 @@ import ProjectCard from "../projectCard";
 import Button from "../button";
 import ProjectsList from "@/data/projects-list";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Keyboard } from "swiper/modules";
 
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/bundle";
 
 export default function Carousel() {
   // * POSITIONS DO CAROUSEL
@@ -91,28 +90,29 @@ export default function Carousel() {
     //   </div>
     // </div>
     <Swiper
-      height={500}
-      slidesPerView={1}
-      spaceBetween={30}
+      centeredSlides={true}
+      slidesPerView={"auto"}
+      spaceBetween={-250}
+      pagination={{ clickable: true }}
+      navigation
+      keyboard={{ enabled: true}}
+      modules={[Pagination, Navigation, Keyboard]}
+      className=""
       loop={true}
-      pagination={{
-        clickable: true,
-      }}
-      navigation={true}
-      modules={[Pagination, Navigation]}
-      className="mySwiper"
     >
       {ProjectsList.map((item, index) => (
         <SwiperSlide key={index}>
-          <ProjectCard
-            focus={true}
-            nome={item.title}
-            link={item.link}
-            img={item.img}
-            repo={item.repo}
-            description={item.description}
-            techs={item.techs}
-          />
+          {({ isActive }) => (
+            <ProjectCard
+              focus={isActive}
+              nome={item.title}
+              link={item.link}
+              img={item.img}
+              repo={item.repo}
+              description={item.description}
+              techs={item.techs}
+            />
+          )}
         </SwiperSlide>
       ))}
     </Swiper>

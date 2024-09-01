@@ -48,10 +48,11 @@ export default function Home() {
             <h1 className="text-2xl text-center hover-title  pb-1">
               Gabriel Sampaio
             </h1>
-
-            <h1 className="text-[64px] text-center leading-none">
+            <hr className="hidden w-full xs:block" />
+            <h1 className="text-[64px] md:text-[48px] xs:text-3xl xs:font-bold text-center leading-none">
               Fullstack Developer
             </h1>
+            <hr className="hidden w-full xs:block" />
           </motion.li>
 
           <motion.li variants={item} className="flex gap-4 items-center">
@@ -60,14 +61,14 @@ export default function Home() {
           </motion.li>
 
           <motion.li
-            className="relative overflow-hidden p-[5px] rounded-lg"
+            className="xs:hidden relative overflow-hidden p-[5px] rounded-lg"
             variants={item}
           >
             <HomeTechs />
           </motion.li>
 
           <motion.li variants={item}>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
               <a download href="/cv.pdf">
                 <Button
                   text="Download C.V"
@@ -93,16 +94,18 @@ export default function Home() {
 
           <motion.li variants={item}>
             <div className="flex gap-8">
-                <FaLinkedin
-                onClick={() => window.open("https://www.linkedin.com/in/gsampaiowz/")}
-                  size={50}
-                  className="duration-300 text-primary rounded-[4px] hover:opacity-50 "
-                />
-                <FaGithub
+              <FaLinkedin
+                onClick={() =>
+                  window.open("https://www.linkedin.com/in/gsampaiowz/")
+                }
+                size={50}
+                className="duration-300 text-primary rounded-[4px] hover:opacity-50 "
+              />
+              <FaGithub
                 onClick={() => window.open("https://github.com/gsampaiowz")}
-                  size={50}
-                  className="duration-300 text-primary rounded-full p-1 hover:opacity-50 "
-                />
+                size={50}
+                className="duration-300 text-primary rounded-full p-1 hover:opacity-50 "
+              />
             </div>
           </motion.li>
         </motion.ul>

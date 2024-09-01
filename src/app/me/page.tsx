@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Me() {
   return (
-    <Container className="items-center justify-center flex-row gap-6">
+    <Container className="items-center justify-center flex-row md:flex-col gap-6">
       <Image
         width={250}
         quality={100}

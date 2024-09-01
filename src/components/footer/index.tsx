@@ -12,11 +12,11 @@ const container = {
 };
 
 export default function Footer() {
-  let OS;
+  const [OS, setOS] = useState<string>()
 
   useEffect(() => {
     if (navigator) {
-      OS = navigator.userAgent.match(/(Windows|Mac|Linux)/)![0];
+      setOS(navigator.userAgent.match(/(Windows|Mac|Linux)/)![0])
     }
   }, []);
 
@@ -31,10 +31,10 @@ export default function Footer() {
       className="w-full py-4 max-w-3xl mx-auto px-6"
     >
       <div className="w-full h-full flex justify-between items-center [&>*]:duration-300">
-        <div className="w-20 h-6 flex">
+        <div className="w-20 h-6 flex xs:hidden">
           <span
             onClick={() => setOpenDialog(true)}
-            className="transition-[background] relative duration-300 w-[56px] h-full rounded-md hover:bg-primary/10 overflow-hidden"
+            className="transition-[background] relative duration-300 w-[56px] h-full rounded-md hover:bg-primary/10 overflow-hidden "
           >
             <span className="flex gap-1 items-center transition-transform duration-500 hover:-translate-x-[52px] w-auto absolute left-0 h-full px-2 font-semibold text-xs [&>*]:w-12">
               <span className="dark:font-normal">search</span>

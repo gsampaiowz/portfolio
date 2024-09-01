@@ -92,7 +92,7 @@ export default function Contact() {
         </form>
       </Form>
 
-      <div className="flex gap-6 [&>*:hover]:opacity-50 [&>*]:duration-300">
+      <div className="flex gap-6 [&>*:hover]:opacity-50 flex-wrap justify-center [&>*]:duration-300">
         {socialMedias.map((item, index) => (
           <item.icon
             key={index}

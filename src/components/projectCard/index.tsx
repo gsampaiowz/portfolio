@@ -26,8 +26,20 @@ export default function ProjectCard({
   img,
 }: projectCardProps) {
   return (
-    <div className="flex flex-col gap-2 transition-[background, size] duration-300 ease-in w-96 xs:w-72 bg-background p-2 rounded-xl">
-      <div onClick={() => focus && window.open(link, "_blank")} className={cn("relative aspect-video duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:w-full after:h-full hover:after:bg-black/25 group", focus && "border-2 border-border ring-2 ring-ring")}>
+    <div
+      className={cn(
+        "flex flex-col gap-2 transition-[background, size] duration-300 ease-in w-96 xs:w-72 p-2 rounded-xl",
+        !focus && "scale-75"
+      )}
+    >
+      <h1 className={cn("text-xl", !focus && "opacity-0")}>{nome}</h1>
+      <div
+        onClick={() => focus && window.open(link, "_blank")}
+        className={cn(
+          "relative aspect-video duration-300 rounded-xl overflow-hidden after:duration-300 after:content-normal after:absolute after:top-0 after:left-0 after:w-full after:h-full hover:after:bg-black/25 group",
+          focus && "border-2 border-border ring-2 ring-ring"
+        )}
+      >
         <Image
           priority
           src={img}
@@ -50,7 +62,6 @@ export default function ProjectCard({
             : "opacity-0 pointer-events-none"
         )}
       >
-        <h1 className="text-xl">{nome}</h1>
         <p className="text-sm">{description}</p>
         <div className="flex gap-2 [&>*]:size-8">
           {techs.map((TechIcon, index) => (
