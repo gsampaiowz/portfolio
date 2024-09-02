@@ -1,6 +1,6 @@
 "use client";
 import BgCircle from "@/components/bgcircle";
-import Container from "../../components/container/index";
+import Container from "../../../components/container/index";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "@/components/button";
