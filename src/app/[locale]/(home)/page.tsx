@@ -96,7 +96,7 @@ export default function Home() {
           </motion.li>
 
           <motion.li variants={item}>
-            <div className="flex gap-8">
+            <div className="flex gap-8 *:cursor-pointer">
               <FaLinkedin
                 onClick={() =>
                   window.open("https://www.linkedin.com/in/gsampaiowz/")

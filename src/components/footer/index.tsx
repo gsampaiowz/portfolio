@@ -12,11 +12,11 @@ const container = {
 };
 
 export default function Footer() {
-  const [OS, setOS] = useState<string>()
+  const [OS, setOS] = useState<string>();
 
   useEffect(() => {
     if (navigator) {
-      setOS(navigator.userAgent.match(/(Windows|Mac|Linux)/)![0])
+      setOS(navigator.userAgent.match(/(Windows|Mac|Linux)/)![0]);
     }
   }, []);
 
