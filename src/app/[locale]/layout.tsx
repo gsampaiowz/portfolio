@@ -5,8 +5,13 @@ import ThemeProvider from "@/providers/theme-provider";
 import CustomCursor from "@/components/customCursor";
 import dynamic from "next/dynamic";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 import Footer from "@/components/footer";
+import { routing } from "@/i18n/routing";
 
 const mainFont = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -15,6 +20,10 @@ export const metadata: Metadata = {
   description: "Gabriel Sampaio - Software Developer",
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function LocaleLayout({
   children,
   params: { locale },
@@ -22,6 +31,10 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
+  //STATIC RENDERING
+  unstable_setRequestLocale(locale);
+
+  //DYNAMIC HEADER FOR NOT SSR
   const Header = dynamic(() => import("@/components/header"), {
     ssr: false,
   });
@@ -30,9 +43,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body
-        className={mainFont.className}
-      >
+      <body className={mainFont.className}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="dark">
             <CustomCursor />

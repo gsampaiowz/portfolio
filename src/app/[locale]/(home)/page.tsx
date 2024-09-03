@@ -1,6 +1,6 @@
 "use client";
 import BgCircle from "@/components/bgcircle";
-import Container from "../../../components/container/index";
+import Container from "@/components/container";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "@/components/button";
@@ -53,7 +53,7 @@ export default function Home() {
             </h1>
             <hr className="hidden w-full xs:block" />
             <h1 className="text-[64px] md:text-[48px] xs:text-3xl xs:font-bold text-center leading-none">
-              {t('title')}
+              {t("title")}
             </h1>
             <hr className="hidden w-full xs:block" />
           </motion.li>

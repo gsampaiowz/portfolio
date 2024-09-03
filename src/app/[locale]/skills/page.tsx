@@ -1,8 +1,15 @@
 import Container from "@/components/container";
 import skills from "@/data/skills";
+import { unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
-export default function Skills() {
+export default function Skills({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  //STATIC RENDERING
+  unstable_setRequestLocale(locale);
   return (
     <Container className="justify-center items-center gap-8">
       {skills.map((group, index) => (

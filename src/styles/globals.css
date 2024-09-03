@@ -75,7 +75,6 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none !important;
 }
 
 /* Chrome, Edge, and Safari */
@@ -102,12 +101,7 @@ html {
 body {
   transition: color, background-color 300ms ease-in;
   color-scheme: dark;
-  cursor: none !important;
   overflow-x: hidden;
-}
-
-body * {
-  cursor: none !important;
 }
 
 body *::selection {
@@ -118,6 +112,10 @@ body *::selection {
 @media screen and (min-width: 768px) {
   body {
     overflow: hidden;
+    cursor: none !important;
+  }
+  body * {
+    cursor: none !important;
   }
 }
 

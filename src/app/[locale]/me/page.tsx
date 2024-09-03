@@ -3,8 +3,15 @@ import Image from "next/image";
 import perfil from "@/assets/img/eu.jpg";
 import aboutMe from "@/data/about-me";
 import React from "react";
+import { unstable_setRequestLocale } from "next-intl/server";
 
-export default function Me() {
+export default function Me({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  //STATIC RENDERING
+  unstable_setRequestLocale(locale);
   return (
     <Container className="items-center justify-center flex-row md:flex-col gap-6">
       <Image

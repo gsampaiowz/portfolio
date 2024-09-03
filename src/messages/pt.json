@@ -1,6 +1,9 @@
 {
-    "HomePage": {
-      "title": "Desenvolvedor Fullstack",
-      "about": "Go to the about page"
-    }
+  "NotFoundPage": {
+    "message": "Página não encontrada."
+  },
+
+  "HomePage": {
+    "title": "Desenvolvedor Fullstack"
   }
+}
