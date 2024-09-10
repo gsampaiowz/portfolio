@@ -26,6 +26,8 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
+  const [load, setLoad] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,8 +42,6 @@ export default function Contact() {
     send(values);
     setLoad(false);
   }
-
-  const [load, setLoad] = useState(false);
 
   return (
     <Container className="justify-center items-center gap-12">
