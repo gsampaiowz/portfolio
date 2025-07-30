@@ -17,7 +17,7 @@ const aboutMe = [
   {
     icon: <FaLaptopCode size={20} />,
     label: "Cursando",
-    value: "Técnico em Desenvolvimento de Sistemas - Senai Paulo Antonio Skaf",
+    value: "Sistemas da Informação - Faculdade Impacta Tecnologia",
   },
   {
     icon: <GiDiploma size={20} />,
@@ -39,12 +39,12 @@ const aboutMe = [
   {
     icon: <MdOutlineWorkHistory size={20} />,
     label: "Experiência",
-    value: "PJ - Desenvolvedor FullStack - PHP, WordPress, React, APIs, Excel",
+    value: "Desenvolvedor FullStack - PHP, WordPress, React, APIs, Excel",
   },
   {
     icon: <FaMapMarkerAlt size={20} />,
     label: "Localidade",
-    value: "São Paulo",
+    value: "Mauá - São Paulo",
   },
 ];
 
